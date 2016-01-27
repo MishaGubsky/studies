@@ -1,0 +1,2 @@
+D:\учёба\2 kurs\2 сем\аисд\tasks\9\9\bin\Debug\9.exe.config
+D:\учёба\2 kurs\2 сем\аисд\tasks\9\9\obj\Debug\9.csprojResolveAssemblyReference.cache

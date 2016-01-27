@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Platform.VisualStudio.JustVs08</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Platform.VisualStudio.JustVs08.ProjectDocuments.VisualC.CopyPastedAdapters.VCAdaptersJustVsXx">
+            <summary>
+            This is the entry point — a component implementation which wires up all of the cloned interface implementations.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.VisualStudio.JustVs08.Shell.Zones.IJustVs08Zone">
+            <summary>
+            Visual Studio integrated products, VS 8.0 only.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,28 @@
+﻿@model Auction.Models.Lot
+ 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+<h2>@ViewBag.Title</h2>
+ 
+@using (Html.BeginForm()) 
+{
+    @Html.LabelFor(model => model.Name, "Название лота")
+    <br />
+    @Html.EditorFor(model => model.Name)
+    <br /><br />
+    @Html.LabelFor(model => model.Description, "Описание")
+    <br />
+    @Html.EditorFor(model => model.Description)
+    <br /><br />
+    @Html.LabelFor(model => model.ExpirationDateTime, "Дата окончания (dd.mm.yyyy)")
+    <br />
+    @Html.EditorFor(model => model.ExpirationDateTime)
+    <br /><br />
+    @Html.LabelFor(model => model.Price, "Цена")
+    <br />
+    @Html.EditorFor(model => model.Price)
+    <br /><br />
+    @RenderBody()
+}

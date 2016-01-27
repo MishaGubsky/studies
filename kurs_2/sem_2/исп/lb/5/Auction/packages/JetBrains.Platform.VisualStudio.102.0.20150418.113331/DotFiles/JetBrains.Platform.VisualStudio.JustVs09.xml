@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Platform.VisualStudio.JustVs09</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Platform.VisualStudio.JustVs09.ProjectModel.VisualC.CopyPastedAdapters.VCAdaptersJustVsXx">
+            <summary>
+            This is the entry point — a component implementation which wires up all of the cloned interface implementations.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.VisualStudio.JustVs09.Shell.Zones.IJustVs09Zone">
+            <summary>
+            Visual Studio integrated products, VS 9.0 only.
+            </summary>
+        </member>
+    </members>
+</doc>

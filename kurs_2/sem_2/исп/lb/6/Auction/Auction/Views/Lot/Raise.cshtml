@@ -1,0 +1,15 @@
+﻿
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<h2>Ваша ставка</h2>
+<form method="post">
+    @ViewBag.Id
+    <p><input value="@ViewBag.Id" name="id" style="display:none;" />
+    <p><input type="number" name="price" /></p>
+    <input type="submit" value="Ставка" />
+</form>

@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "ViewListPerchases";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewListPerchases</h2>
+<div>
+    <table>
+        <tr class="header">
+            <td>
+                <p>Id лота</p>
+            </td>
+            <td>
+                <p>Id покупателя</p>
+            </td>
+            <td></td>
+        </tr>
+        @foreach (var l in ViewBag.Perchases)
+        {
+            int Title = l.LotId;
+            int Title1 = l.UserId;
+            <tr>
+                <td>
+                    <p>@Html.RouteLink(Title.ToString(), "route_Lot", new { action = "GetLot", id = l.LotId })</p>
+                </td>               
+                <td>
+                    <p>@Html.RouteLink(Title1.ToString(),"route_Admin", new { action ="GetUser", id = l.UserId })</p>
+
+                </td>
+                <td>
+                        <p>@Html.RouteLink("Удалить", "route_Admin", new { action = "DeletePerchase", id = l.Id })</p>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

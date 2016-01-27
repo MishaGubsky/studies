@@ -1,0 +1,26 @@
+clc;
+clear;
+syms w11(t) w12(t) w21(t) w22(t) W(t) Res x1(t) x2(t) tau
+A = [0,1;-4,-4];
+f(t) = [0; t*cos(t)];
+W(t) = [w11(t), w12(t);w21(t),w22(t)];
+I = [1,0;0,1];
+Res = dsolve(diff(W) == A*W, W(0) == I);
+W(t) = simplify([Res.w11, Res.w12; Res.w21,Res.w22]);
+pretty(W);
+x = [x1(t);x2(t)];
+x0 = [1;1];
+x = simplify(W(t)*(W(0)^(-1))*x0 + W(t)*int(W(tau)^(-1)*f(tau), tau, 0, t));
+pretty(x);
+y(t) = x(1);
+dy(t) = x(2);
+figure(1);
+k = 0:0.1:100;
+hold on;grid on;
+plot(k, y(k));
+figure(2);
+hold on;grid on;
+line(y(k), dy(k));
+figure(3);
+hold on;grid on;
+line(y(k), dy(k),k);

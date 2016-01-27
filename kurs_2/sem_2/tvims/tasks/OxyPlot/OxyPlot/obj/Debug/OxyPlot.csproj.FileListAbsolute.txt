@@ -1,0 +1,7 @@
+D:\учёба\2 kurs\2 сем\твимс\tasks\OxyPlot\OxyPlot\bin\Debug\OxyPlot.exe.config
+D:\учёба\2 kurs\2 сем\твимс\tasks\OxyPlot\OxyPlot\obj\Debug\OxyPlot.csprojResolveAssemblyReference.cache
+D:\учёба\2 kurs\2 сем\твимс\tasks\OxyPlot\OxyPlot\obj\Debug\MainWindow.g.cs
+D:\учёба\2 kurs\2 сем\твимс\tasks\OxyPlot\OxyPlot\obj\Debug\App.g.cs
+D:\учёба\2 kurs\2 сем\твимс\tasks\OxyPlot\OxyPlot\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\учёба\2 kurs\2 сем\твимс\tasks\OxyPlot\OxyPlot\obj\Debug\OxyPlot_MarkupCompile.cache
+D:\учёба\2 kurs\2 сем\твимс\tasks\OxyPlot\OxyPlot\obj\Debug\OxyPlot_MarkupCompile.lref

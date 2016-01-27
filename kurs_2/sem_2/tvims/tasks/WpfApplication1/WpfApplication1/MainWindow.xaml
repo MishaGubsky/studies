@@ -1,0 +1,56 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:oxy="http://oxyplot.org/wpf"
+        xmlns:local="clr-namespace:WpfApplication1"
+        xmlns:models="clr-namespace:WpfApplication1.Models"
+        
+        FontFamily="Calibri" FontSize="16"
+        Title="Функция распределения" Height="550" Width="925">
+
+    <Window.DataContext>
+        <models:Model/>
+    </Window.DataContext>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="350"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <oxy:PlotView Name="plot_view" Grid.Row="0" Grid.Column="0" 
+                      Model="{Binding PlotViewModel}" Height="Auto" Width="Auto"/>
+
+        <ListView Name="list_view" Grid.Row="0" Grid.Column="1" Margin="5 10 5 5"
+                  ItemsSource="{Binding VariationFunction.Points}">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header ="Вариационный ряд" Width="150"
+                                        DisplayMemberBinding="{Binding X, StringFormat={}{0:0.000}}" />
+
+                        <GridViewColumn Header ="Эмпирическая функция" Width="150"
+                                        DisplayMemberBinding="{Binding Y, StringFormat={}{0:0.000}}" />
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <DockPanel Grid.Row="2" Grid.Column="0">
+            <TextBlock Margin="5" VerticalAlignment="Center" Text="Значение N = "/>
+            <TextBox Margin="5" Text="{Binding N, Mode=TwoWay}"/>
+        </DockPanel>
+
+        <Button Grid.Row="2" Grid.Column="1"
+                Margin="5" Click="DrawPlotButton_Click">
+            Посчитать
+        </Button>
+        
+    </Grid>
+</Window>

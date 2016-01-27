@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+    ViewBag.Title = "Главная";
+}
+
+<h2>Index</h2>
+<body>
+
+     <a>@Html.ActionLink("Auction", "ViewList", "List")</a>        
+    @if(@ViewBag.Admin)
+    { 
+    <a>@Html.ActionLink("Таблица покупов", "ViewListPerchases", "Admin")</a>
+    <a>@Html.ActionLink("Таблица пользователей", "ViewListUsers", "Admin")</a>
+    }
+</body>

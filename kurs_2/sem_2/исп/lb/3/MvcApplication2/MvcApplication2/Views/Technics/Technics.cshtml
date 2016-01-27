@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ 
+<div>
+        <h3>Аукцион техники</h3>
+        <table>
+            <tr class="header"><td><p>Название</p></td>
+                <td><p>Год выпуска</p></td>
+                <td><p>Цена</p></td><td></td>
+            </tr>
+            @foreach(var b in ViewBag.Technics)
+            {
+            <tr>
+                <td><p>@b.Name</p></td>
+                <td><p>@b.Year</p></td>
+                <td><p>@b.Price</p></td>
+                <td><p><a href="/Technics/Buy/@b.Id">Купить</a></p></td>
+            </tr>
+            }
+        </table>
+    </div>

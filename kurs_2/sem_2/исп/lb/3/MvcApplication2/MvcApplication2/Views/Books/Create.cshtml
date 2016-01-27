@@ -1,0 +1,26 @@
+﻿@model MvcApplication2.Models.Books.Book
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+<h2>Новая книга</h2>
+ 
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name, "Название книги")
+    <br/>
+    @Html.EditorFor(model => model.Name)
+    <br/>
+    <br/>
+    @Html.LabelFor(model => model.Author, "Автор")
+    <br/>
+    @Html.EditorFor(model => model.Author)
+    <br/>
+    <br/>
+    @Html.LabelFor(model => model.Price, "Цена")
+    <br/>
+    @Html.EditorFor(model => model.Price)
+    <br/>
+    <br/>   
+    <input type="submit" value="Добавить" />
+}

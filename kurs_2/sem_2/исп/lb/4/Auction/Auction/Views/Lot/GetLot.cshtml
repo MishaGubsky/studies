@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Lot";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Auction.Models.Lot
+
+<h2>Лот Номер </h2>
+<h2>    @Html.DisplayFor(model => model.Id)</h2>
+<table>
+    <tr class="header">
+        <td>
+            <p>Название лота</p>
+        </td>
+        <td>
+            <p>Описание</p>
+        </td>
+        <td>
+            <p>Дата окончания</p>
+        </td>
+        <td>
+            <p>Цена</p>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.ExpirationDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Price)
+        </td>
+        
+    </tr>
+    
+</table>

@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Удаление покупки";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Auction.Models.Perchase
+<h2> Номер покупки</h2>
+<h2>    @Html.DisplayFor(model => model.Id)</h2>
+<table>
+    <tr class="header">
+        <td>
+            <p>Id лота</p>
+        </td>
+        <td>
+            <p>Id покупателя</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.LotId)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UserId)
+        </td>
+    </tr>
+
+</table>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить" />
+}
+

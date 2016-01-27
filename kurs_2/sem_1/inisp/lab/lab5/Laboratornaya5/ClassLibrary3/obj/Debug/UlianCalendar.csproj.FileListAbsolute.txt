@@ -1,0 +1,7 @@
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary3\bin\Debug\ClassLibrary3.dll
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary3\bin\Debug\ClassLibrary3.pdb
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary3\bin\Debug\ClassLibrary1.dll
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary3\bin\Debug\ClassLibrary1.pdb
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary3\obj\Debug\UlianCalendar.csprojResolveAssemblyReference.cache
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary3\obj\Debug\ClassLibrary3.dll
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary3\obj\Debug\ClassLibrary3.pdb

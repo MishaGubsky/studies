@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <Record>
+    <Artist>Evanescence</Artist>
+    <Name>My heart is broken</Name>
+    <Duration>04:29</Duration>
+    <Rating>4</Rating>
+  </Record>
+  <Record>
+    <Artist>Король и Шут</Artist>
+    <Name>Энди Кауфман</Name>
+    <Duration>02:32</Duration>
+    <Rating>2</Rating>
+  </Record>
+</Root>

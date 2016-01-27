@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<routes>
+  <route>
+    <NumberOfBus>1</NumberOfBus>
+    <Stations>
+      <Station>
+        no information avaliable
+        </Station>
+      <Station>
+        no information avaliable
+      </Station>
+      <Station>
+        no information avaliable
+      </Station>
+      <Station>
+        no information avaliable
+      </Station>
+      <Station>
+        no information avaliable
+      </Station>
+      <Station>
+        no information avaliable
+      </Station>
+    </Stations>
+  </route>
+  <route>
+    <NumberOfBus>2</NumberOfBus>
+    <Stations>
+      <Station>
+        no information avaliable
+      </Station>
+      <Station>
+        no information avaliable
+      </Station>
+      <Station>
+        no information avaliable
+      </Station>
+      <Station>
+        no information avaliable
+      </Station>
+      <Station>
+        no information avaliable
+      </Station>
+      <Station>
+        no information avaliable
+      </Station>
+    </Stations>
+  </route>
+  <route>
+    <NumberOfBus>3</NumberOfBus>
+    <Stations>
+      <Station>
+        no information avaliable
+      </Station>
+      <Station>
+        no information avaliable
+      </Station>
+      <Station>
+        no information avaliable
+      </Station>
+      <Station>
+        no information avaliable
+      </Station>
+      <Station>
+        no information avaliable
+      </Station>
+      <Station>
+        no information avaliable
+      </Station>
+    </Stations>
+  </route>
+
+</routes>

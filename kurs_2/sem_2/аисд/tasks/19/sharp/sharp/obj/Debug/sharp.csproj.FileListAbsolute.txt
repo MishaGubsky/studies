@@ -1,0 +1,6 @@
+D:\учёба\2 kurs\2 сем\аисд\tasks\18\sharp\sharp\bin\Debug\sharp.exe.config
+D:\учёба\2 kurs\2 сем\аисд\tasks\18\sharp\sharp\bin\Debug\sharp.exe
+D:\учёба\2 kurs\2 сем\аисд\tasks\18\sharp\sharp\bin\Debug\sharp.pdb
+D:\учёба\2 kurs\2 сем\аисд\tasks\18\sharp\sharp\obj\Debug\sharp.csprojResolveAssemblyReference.cache
+D:\учёба\2 kurs\2 сем\аисд\tasks\18\sharp\sharp\obj\Debug\sharp.exe
+D:\учёба\2 kurs\2 сем\аисд\tasks\18\sharp\sharp\obj\Debug\sharp.pdb

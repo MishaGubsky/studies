@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+    ViewBag.Title = "ViewList";
+}
+
+<h2>ViewList</h2>
+<div>
+        <h3>Аукцион</h3>
+    <table>
+        <tr class="header"><td>
+                <p>Название лота</p></td>
+            <td>
+                <p>Описание</p></td>
+            <td>
+                <p>Дата окончания</p></td>
+            <td>
+                <p>Цена</p></td><td></td>
+        </tr>
+        @foreach (var l in ViewBag.lots)
+        {
+            string Title=l.Name;
+            <tr>
+                <td>
+                    <p>@Html.RouteLink(Title, "route_Lot", new { action="GetLot", id = l.Id })</p></td>
+                <td>
+                    <p>@l.Description</p></td>
+                <td>
+                    <p>@l.ExpirationDateTime</p></td>
+                <td>
+                    <p>@l.Price</p></td>
+                <td>
+                    @Html.RouteLink("Редактировать", "Edit", new { id = l.Id }) |
+                    @Html.RouteLink("Удалить", "route_Lot", new { action="DeleteLot", id = l.Id })</td>
+            </tr>
+        }
+    </table>
+    <form  method="post" action="Add">
+            <tr><td><input type="submit" value="добавить"/> </td>
+                <td></td></tr>
+     </form>
+</div>

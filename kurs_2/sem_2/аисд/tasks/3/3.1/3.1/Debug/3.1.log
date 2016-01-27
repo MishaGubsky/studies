@@ -1,0 +1,16 @@
+﻿Build started 11.05.2015 13:16:21.
+     1>Project "D:\учёба\2 kurs\2 сем\аисд\tasks\3\3.1\3.1\3.1.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt 3.1.cpp
+         3.1.cpp
+     1>d:\учёба\2 kurs\2 сем\аисд\tasks\3\3.1\3.1\3.1.cpp(5): warning C4996: 'gets': This function or variable may be unsafe. Consider using gets_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(254) : see declaration of 'gets'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\учёба\2 kurs\2 сем\аисд\tasks\3\3.1\Debug\3.1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\учёба\2 kurs\2 сем\аисд\tasks\3\3.1\Debug\3.1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\учёба\2 kurs\2 сем\аисд\tasks\3\3.1\Debug\3.1.lib" /MACHINE:X86 Debug\3.1.obj
+         Debug\stdafx.obj
+         3.1.vcxproj -> D:\учёба\2 kurs\2 сем\аисд\tasks\3\3.1\Debug\3.1.exe
+     1>Done Building Project "D:\учёба\2 kurs\2 сем\аисд\tasks\3\3.1\3.1\3.1.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.30

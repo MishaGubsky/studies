@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+</head>
+  
+<body>
+    <nav>
+        <ul class="menu">
+            <li>@Html.ActionLink("Главная", "Index", "Home")</li> 
+            
+            @if (Request.Cookies["UserId"]!=null)
+            {
+                <li>Здравтсвуйте, @Request.Cookies["UserName"].Value</li>
+                <li>@Html.ActionLink("Выход", "LogOut", "Account")</li>
+            }
+            else{
+                <li>@Html.ActionLink("Регистрация", "Registration", "Account")</li>
+                <li>@Html.ActionLink("Войти", "Login", "Account")</li>
+            }      
+        </ul>
+    </nav>
+    @RenderBody()
+</body>
+</html>

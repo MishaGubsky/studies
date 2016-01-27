@@ -1,0 +1,31 @@
+﻿@model MvcApplication2.Models.Search
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+        <h3>Поиск</h3>
+        @using(Html.BeginForm())
+        {         
+            <table>
+                <tr><td><p>Что ищем? </p></td>
+                    <td>@Html.TextBoxFor(x=>x.SearchText) </td></tr>
+                <tr><td><input type="submit" value="Поиск" /> </td>
+                <td></td></tr>
+            </table>
+        }
+        @if(Html.ViewBag.Search==false)
+        {
+                <tr><td><p>Ничего не найдено</p></td></tr>
+           
+        }
+        @if(Html.ViewBag.Search==true)
+        {
+            <table>
+                <tr><td><p>Название</p></td>
+                    <td></td></tr>
+            </table>
+        }
+
+</div>

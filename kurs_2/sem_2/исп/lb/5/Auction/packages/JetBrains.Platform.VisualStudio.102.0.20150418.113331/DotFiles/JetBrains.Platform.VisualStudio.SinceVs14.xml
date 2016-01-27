@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Platform.VisualStudio.SinceVs14</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Platform.VisualStudio.SinceVs14.Shell.Zones.ISinceVs14Zone">
+            <summary>
+            Visual Studio integrated products, VS 14.0 and above.
+            </summary>
+        </member>
+    </members>
+</doc>

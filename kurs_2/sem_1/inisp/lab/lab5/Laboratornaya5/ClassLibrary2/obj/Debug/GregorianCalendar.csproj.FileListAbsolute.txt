@@ -1,0 +1,9 @@
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary2\obj\Debug\GregorianCalendar.csprojResolveAssemblyReference.cache
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary2\bin\Debug\ClassLibrary2.dll
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary2\bin\Debug\ClassLibrary2.pdb
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary2\bin\Debug\ClassLibrary1.dll
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary2\bin\Debug\Laboratornaya5.exe
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary2\bin\Debug\ClassLibrary1.pdb
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary2\bin\Debug\Laboratornaya5.pdb
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary2\obj\Debug\ClassLibrary2.dll
+D:\учёба\2 kurs\1 сем\inisp\lab\lab5\Laboratornaya5\ClassLibrary2\obj\Debug\ClassLibrary2.pdb

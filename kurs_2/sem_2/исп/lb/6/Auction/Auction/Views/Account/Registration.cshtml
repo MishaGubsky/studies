@@ -1,0 +1,29 @@
+﻿@model Auction.Models.User
+@{
+    ViewBag.Title = "Регистрация";
+
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Login, "Введите логин  *")
+    <br />
+    @Html.EditorFor(model => model.Login)
+    <br /><br />
+    @Html.LabelFor(model => model.Pass, "Пароль  *")
+    <br />
+    @Html.EditorFor(model => model.Pass)
+    <br /><br />
+    @Html.LabelFor(model => model.Name, "Как Вас называть?")
+    <br />
+    @Html.EditorFor(model => model.Name)
+    <br /><br />
+    @Html.LabelFor(model => model.Address, "Ваша эл почта")
+    <br />
+    @Html.EditorFor(model => model.Address)
+    <br/><br/>
+    <p><input type="submit" value="Отправить" /></p>
+}

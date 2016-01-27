@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>inspectcode</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.CommandLine.InspectCode.Unattended.IInspectCodeConsumer.Consume(JetBrains.ReSharper.Daemon.SolutionAnalysis.IIssue)">
+            <remarks>Should be thread-safe!</remarks>
+        </member>
+    </members>
+</doc>

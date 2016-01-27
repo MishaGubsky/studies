@@ -1,0 +1,20 @@
+.model small
+.stuk 100h
+.data
+
+a dw 20
+b dw 30
+
+.code
+start:
+
+mov AX, @ DATA
+mov DS, Ax
+
+mov Ax,a
+mov Bx,b
+add AX,BX
+
+mov AH,4ch
+int 21h
+end start

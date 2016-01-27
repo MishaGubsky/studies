@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.PsiFeatures.VisualStudio.SinceVs14</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.PsiFeatures.VisualStudio.SinceVs14.Daemon.ResharperDaemonVsBulbRemover">
+            <summary>
+            this component does not track language specific documents. Instead it works only in specific environments.
+            So in example where Vs zone is turned off and CS is turned on, vb document's vs bulb will be still suppressed
+            </summary>
+        </member>
+    </members>
+</doc>

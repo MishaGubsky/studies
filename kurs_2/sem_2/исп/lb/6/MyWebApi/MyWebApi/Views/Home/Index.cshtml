@@ -1,0 +1,114 @@
+﻿
+
+@section Scripts {
+    <script>
+
+    function sendAjaxRequest(httpMethod, callback, url) {
+        $.ajax("http://localhost:3582/api/WebApi/" + url, {
+            type: httpMethod,
+            crossDomain: true,
+            success: callback,
+        });
+    }
+
+    function getAllItems() {
+        sendAjaxRequest("GET",
+            function (data) {
+                var s = '';
+                $.each(data, function (i, item) {
+                    s += '<p>' + item.Id + '</p>';
+                })
+                $('#ID').html(s);
+                
+            s = '';
+            $.each(data, function (i, item) {
+                s += '<p>' + item.LotId + '</p>';
+            })
+            $('#LotId').html(s);
+            s = '';
+            $.each(data, function (i, item) {
+                s += '<p>' + item.UserId + '</p>';
+            })
+            $('#UserId').html(s);
+           
+
+
+            s = '';
+            $.each(data, function (i, item) {
+                s += '<p><button class="btn btn-xs btn-primary" id="' + i + '">Удалить</button></p>';
+            })
+            $('#ButtonDel').html(s);
+            
+            $.each(data, function (i, item) {
+                $('#' + i).click(function () {
+                    removeItem(item);
+                });
+            })
+
+
+
+            s = '';
+            $.each(data, function (i, item) {
+                s += '<p><button class="btn btn-xs btn-primary" id=Show"' + i + '">Показать</button></p>';
+            })
+            $('#ButtonShow').html(s);
+
+            $.each(data, function (i, item) {
+                $('#Show' + i).click(function () {
+                    removeItem(item);
+                });
+            })
+
+
+
+        }, "GetAllPerchases");
+    }
+
+    function ShowItem(item) {
+        $.ajax({
+            url: "http://localhost:3582/api/WebApi/" + "GetUser?UsId=" + item.UserId + "&LotId=" + item.LotId,
+            type: "POST",
+            crossDomain: true,
+            success: function (mas) {
+                alert(mas);
+            },
+        });
+    }
+
+
+
+        function removeItem(item) {
+            sendAjaxRequest("DELETE", function () {
+                getAllItems()
+            }, "DeletePerchase/" + item.Id);
+        }
+
+        $(document).ready(function () {
+            getAllItems();
+        });
+    </script>
+
+}
+@section Body {
+    <div id="summary" class="section panel panel-primary">
+        <div class="panel-heading">Все заказы</div>
+        <div class="panel-body">
+
+            <table class="table table-striped table-condensed">
+                <thead>
+                    <tr><th>ID</th><th>Id Лота</th><th>Id Пользователя</th><th></th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="ID"></td>
+                        <td id="LotId"></td>
+                        <td id="UserId"></td>
+                        <td id="ButtonDel"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="editor" class="section panel panel-primary">
+    </div>
+}

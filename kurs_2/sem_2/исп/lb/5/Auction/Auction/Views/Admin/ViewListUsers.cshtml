@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "ViewListUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewListUsers</h2>
+<div>
+    <h3>Аукцион</h3>
+    <table>
+        <tr class="header">
+            <td>
+                <p>Имя</p>
+            </td>
+            <td>
+                <p>Адрес</p>
+            </td>
+            <td>
+                <p>Логин</p>
+            </td>
+            <td>
+                <p>Пароль</p>
+            </td>
+
+            <td>
+                <p>Роль</p>
+            </td>
+            <td></td>
+        </tr>
+        @foreach (var l in ViewBag.Users)
+        {
+            <tr>
+                <td>
+                    @l.Name
+                </td>
+                <td>
+                    @l.Address
+                </td>
+                <td>
+                    @l.Login
+                </td>
+                <td>
+                    @l.Pass
+                </td>
+
+                <td>
+                    @l.Role
+                </td>
+                <td>
+                    <p>@Html.RouteLink("Удалить", "route_Admin", new { action = "DeleteUser", id = l.Id })</p>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

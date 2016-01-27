@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Auction.Models.User
+
+<h2>Лот Номер </h2>
+<h2>    @Html.DisplayFor(model => model.Id)</h2>
+<table>
+    <tr class="header">
+        <td>
+            <p>Имя</p>
+        </td>
+        <td>
+            <p>Адрес</p>
+        </td>
+        <td>
+            <p>Логин</p>
+        </td>
+        <td>
+            <p>Пароль</p>
+        </td>
+
+        <td>
+            <p>Роль</p>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Login)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Pass)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.Role)
+        </td>
+
+    </tr>
+
+</table>
+

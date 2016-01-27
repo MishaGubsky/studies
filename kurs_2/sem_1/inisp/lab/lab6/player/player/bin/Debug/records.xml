@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<routes>
+  <route>
+    <NumberOfBus>1</NumberOfBus>
+    <Stations>
+      no information avaliable
+    </Stations>
+  </route>
+  <route>
+    <NumberOfBus>2</NumberOfBus>
+    <Stations>
+      no information avaliable
+    </Stations>
+  </route>
+  <route>
+    <NumberOfBus>3</NumberOfBus>
+    <Stations>
+      no information avaliable
+    </Stations>
+  </route>
+
+</routes>

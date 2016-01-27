@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.CommandLine.Common.Console</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.CommandLine.Common.Console.TeamCity.Logging.TeamCityToolLogger">
+            <summary>
+            Log all messages in TeamCity's service messages format
+            </summary>
+        </member>
+        <member name="T:JetBrains.CommandLine.Common.Console.TeamCity.ZoneMarker">
+            <summary>
+            Set of assets for for TeamCity specific console environment.
+            </summary>
+        </member>
+        <member name="T:JetBrains.CommandLine.Common.Console.Util.Environment.IConsoleZone">
+            <summary>
+            All products running in a standalone fashion — not under VS nor unit testing.
+            </summary>
+        </member>
+        <member name="M:JetBrains.CommandLine.Common.Console.Util.Hacks.CommandLineFileDependenciesSynchronizer.SchedulerTask">
+            <summary>
+            Do not start synchronization process
+            </summary>
+        </member>
+        <member name="T:JetBrains.CommandLine.Common.Console.Util.Logging.ToolLoggerInstaller">
+            <summary>
+            Attaches logger listener to the logger from environment and replaces console logger.
+            </summary>
+        </member>
+    </members>
+</doc>

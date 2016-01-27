@@ -1,0 +1,162 @@
+﻿/*Index*/
+
+html{
+	background-image: url(/img/html-max.jpg);
+	background-color: #000;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position: 0px 0px;	
+	background-size: 100% auto;	
+}
+
+
+body, td {
+font-family: verdana;
+font-size: 11px;
+color: #333;
+}
+
+a:link, a:visited {
+font-weight: bold;
+color: #fafafa;
+text-decoration: none;
+font-weight: normal;
+}
+
+a {
+    transition: all .3s ease-in-out;
+}
+
+
+.honeycomb:hover .text-field{	
+	background: url(/img/honeycomb-hover.png) no-repeat;	
+	color: #EBF165;
+    opacity: 1;
+	text-shadow: 1px 1px 2px black, 0 0 1em rgb(83, 122, 121);
+}
+
+
+a:hover {
+	font-weight:normal;
+    color: #EBF165;
+    text-shadow: 1px 1px 2px black, 0 0 1em rgb(83, 122, 121);
+}
+
+.bus_tt:hover{
+	opacity: 1;
+}
+
+.bus_tt {
+background: #435561;
+font-size: 17px;
+border-radius: 4px;
+display: block;
+width: 88%;
+text-align: center;
+margin: 15px 5%;
+padding: 10px 1%;
+opacity: 0.75;
+}
+
+.honeycomb {
+float: left;
+margin: 0px 17px;
+opacity: 0.75;
+position: relative;
+}
+
+
+area {
+display: inline;
+}
+
+.honeycombs .text-field {
+display: block;
+width: 74px;
+height: 68px;
+position: absolute;
+top: 0px;
+z-index: 1;
+background: url(/img/honeycomb.png) no-repeat;
+font-size: 26px;
+color: #ffffff;
+text-align: center;
+line-height: 68px;
+}
+
+.honeycombs map, .honeycombs map area {
+position: relative;
+z-index: 4;
+overflow: hidden;
+display: block;
+}
+element.style {
+padding: 0px 8.5px 30px;
+}
+
+
+
+/*WebForm2*/
+
+#com {
+            width: 241px;
+            border-radius:6px;
+            opacity:0.8;
+        }
+
+#nam {
+            width: 149px;
+            border-radius:4px;
+            opacity:0.8;
+        }
+
+.RequiredFilds {
+    color: red;
+}
+
+.list_direction {
+    border: 2px solid black;
+    border-collapse: collapse; 
+    border-radius: 10px;
+    background-color: #f4fa6f; 
+    text-align: center; 
+    margin-bottom:100px;
+    padding: 2% 5%;
+    height: auto;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 10px;
+}
+
+.comments {
+    color: #f4fa6f;
+    background-color:transparent;
+    width:245px;
+    margin-left:100px;
+    margin-top:100px;
+    margin-bottom:50px;
+}
+
+#Panel1 {
+    background-color:#6a6776;
+    border-radius:3%;
+    opacity:0.9;
+    padding:10px 10px;
+}
+
+.LabelName {
+    font-weight:900;
+    font-size:15px;
+    font-style:italic;
+    margin: 3px 3px;
+}
+
+.LabelStrComment {
+    font-size:12px;
+    margin-left:10%;
+}
+
+#Button1 {
+    border-radius:10%;
+    opacity:0.8;
+}

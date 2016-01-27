@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+        <h3>Аукцион книг</h3>
+    <table>
+        <tr class="header"><td>
+                <p>Название книги</p></td>
+            <td>
+                <p>Автор</p></td>
+            <td>
+                <p>Цена</p></td><td></td>
+        </tr>
+        @foreach (var b in ViewBag.Books)
+        {
+            <tr>
+                <td>
+                    <p>@b.Name</p></td>
+                <td>
+                    <p>@b.Author</p></td>
+                <td>
+                    <p>@b.Price</p></td>
+                <td>
+                    <p><a href="/Books/Buy/@b.Id">Купить</a>
+                </p></td>
+            </tr>
+        }
+    </table>
+                <tr><td><input type="submit" value="добавить" /> </td>
+                <td></td></tr>
+</div>
