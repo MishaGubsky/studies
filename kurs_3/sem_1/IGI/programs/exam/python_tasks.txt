@@ -1,0 +1,113 @@
+1) Linear function:
+
+	solving: 2nd lab
+
+
+2) Iterator-counter:
+	- взять путь к файлу, стоп-буквы, стоп-слова
+	- открыть и прочитать файл
+	- удалить стоп-буквы
+	- напечатать кол уникальных слов(учитывая стоп-слова)
+	- (доп) считатть одинаковыми слова у кот кол гл и согл совпадает.
+
+	solving: http://code.re/9yk
+
+3) Object to json:
+	- парсер в json
+	- (доп) учитывать уровень вложенности для красивой записи
+
+	solving: 2nd lab
+
+4) Property implementation
+	- реализовать дискриптор/декоратор
+	- (доп) использовать декоратор(not specified)
+
+	solving: 
+
+	class Property(object):
+    "Emulate PyProperty_Type() in Objects/descrobject.c"
+
+    def __init__(self, fget=None, fset=None, fdel=None, doc=None):
+        self.fget = fget
+        self.fset = fset
+        self.fdel = fdel
+        if doc is None and fget is not None:
+            doc = fget.__doc__
+        self.__doc__ = doc
+
+    def __get__(self, obj, objtype=None):
+        if obj is None:
+            return self
+        if self.fget is None:
+            raise AttributeError("unreadable attribute")
+        return self.fget(obj)
+
+    def __set__(self, obj, value):
+        if self.fset is None:
+            raise AttributeError("can't set attribute")
+        self.fset(obj, value)
+
+    def __delete__(self, obj):
+        if self.fdel is None:
+            raise AttributeError("can't delete attribute")
+        self.fdel(obj)
+
+    def getter(self, fget):
+        return type(self)(fget, self.fset, self.fdel, self.__doc__)
+
+    def setter(self, fset):
+        return type(self)(self.fget, fset, self.fdel, self.__doc__)
+
+    def deleter(self, fdel):
+        return type(self)(self.fget, self.fset, fdel, self.__doc__)
+
+
+	class PseudoMeter(object):
+	    def __init__(self):
+	        self.__temperature = 0
+
+	    def __get_temperature(self):
+	        print "Asked for temperature"
+	        return self.__temperature
+
+	    def __set_temperature(self, value):
+	        print "Got new value"
+	        if not isinstance(value, int):
+	            raise TypeError("int value required")
+	        self.__temperature = value
+
+	    temperature = Property(__get_temperature, __set_temperature)
+
+
+	meter = PseudoMeter()
+	meter.temperature = 10
+	print meter.temperature
+
+
+	class PseudoMeter1(object):
+	    def __init__(self):
+	        self.__temperature = 10
+
+	    @Property
+	    def temperature(self):
+	        print "Asked for temperature"
+	        return self.__temperature
+
+	    @temperature.setter
+	    def temperature(self, value):
+	        print "Asked for temperature"
+	        self.__temperature = value
+
+
+
+	met = PseudoMeter1()
+	met.temperature = 10
+	print met.temperature
+
+5) Django.
+	
+	- перейти по урлу: /list/supremum
+	- создать модели
+	- запихать их во вьюшку
+	- распечатать все простые числа до supremum (template ?)
+	-(доп)сохранение в базу

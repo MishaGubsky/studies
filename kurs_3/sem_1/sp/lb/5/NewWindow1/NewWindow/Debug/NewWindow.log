@@ -1,0 +1,15 @@
+﻿Build started 11.09.2015 12:06:28.
+     1>Project "E:\учёба\3 kurs\sp\lb\5\NewWindow1\NewWindow\NewWindow.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt MainWindow.cpp
+         MainWindow.cpp
+     1>e:\учёба\3 kurs\sp\lb\5\newwindow1\newwindow\mainwindow.cpp(2): warning C4005: 'UNICODE' : macro redefinition
+                 command-line arguments :  see previous definition of 'UNICODE'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\учёба\3 kurs\sp\lb\5\NewWindow1\Debug\NewWindow.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\учёба\3 kurs\sp\lb\5\NewWindow1\Debug\NewWindow.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\учёба\3 kurs\sp\lb\5\NewWindow1\Debug\NewWindow.lib" /MACHINE:X86 Debug\MainWindow.obj
+         NewWindow.vcxproj -> E:\учёба\3 kurs\sp\lb\5\NewWindow1\Debug\NewWindow.exe
+     1>Done Building Project "E:\учёба\3 kurs\sp\lb\5\NewWindow1\NewWindow\NewWindow.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.05

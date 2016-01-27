@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            {% if post.category %}
+                 <h4>{{ post.category}}</h4>
+            {% else %}
+                <h4>Not category</h4>
+            {% endif %}
+            <p>{{ post.text|linebreaks }}</p>
+           <a href="{% url "post_detail" pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+           <a href="{% url "dislike" pk=post.pk %}" class="dislike">+ {{ post.get_dislikes.count }}</a>
+           <a href="{% url "like" pk=post.pk %}" class="like">+ {{ post.get_likes.count }}</a>
+        </div>
+    {% endfor %}
+{% endblock content %}

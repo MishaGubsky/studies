@@ -1,0 +1,133 @@
+create database if not exists торговля;
+
+
+drop table if exists `сотрудники`;
+create table `сотрудники` (
+	СотрудникID int not null auto_increment,
+	
+	ФИО varchar(50) not null,
+	Должность varchar(20) not null,
+	Телефон varchar(15) not null,
+	primary key (СотрудникID)
+);
+
+
+drop table if exists `организации`;
+create table `организации` (
+	ОрганизацияID int not null auto_increment,
+	
+	УНП int not null,
+	Название varchar(30) not null,
+	Руковолитель varchar(30) not null,
+	Телефон varchar(15) not null,
+	ЮрАдркс varchar(50) not null,
+	primary key (ОрганизацияID)
+);
+
+
+drop table if exists `состояниеЗаказа`;
+create table `состояниеЗаказа` (
+	СостояниеID int not null auto_increment,
+	
+	Состояние varchar(50) not null,
+	primary key (СостояниеID)
+);
+
+drop table if exists `клиенты`;
+create table `клиенты` (
+	МенеджерКлиентаID int not null auto_increment,
+	ОрганизацияID int not null,
+	
+	Менеджер varchar(30) not null,
+	Телефон varchar(15) not null,
+	Факс varchar(15) null,
+	primary key (МенеджерКлиентаID),
+	foreign key (`ОрганизацияID`) references `организации`(`ОрганизацияID`)
+);
+
+drop table if exists `заказы`;
+create table `заказы` (
+	ЗаказID int not null auto_increment,
+	МенеджерКлиентаID int not null,
+	СотрудникID int not null,
+	СостояниеID int not null,
+	
+	НомерНакладной int not null,
+	ОбщаяСумма float not null default 0,
+	ДатаЗаказа timestamp not null default current_timestamp,
+	ДатаОтгрузки timestamp not null default current_timestamp,
+	Примечания varchar(50) null,
+	primary key (ЗаказID),
+	foreign key (`МенеджерКлиентаID`) references `клиенты`(`МенеджерКлиентаID`),
+	foreign key (`СотрудникID`) references `сотрудники`(`СотрудникID`),
+	foreign key (`СостояниеID`) references `состояниеЗаказа`(`СостояниеID`)
+);
+
+drop table if exists `поставщики`;
+create table `поставщики` (
+	МенеджерПоставщикаID int not null auto_increment,
+	ПоставщикID int not null,
+	
+	Менеджер varchar(30) not null,
+	Телефон varchar(15) not null,
+	Факс varchar(15) null,
+	primary key (МенеджерПоставщикаID),
+	foreign key (`ПоставщикID`) references `организации`(`ОрганизацияID`)
+);
+
+drop table if exists `каталогТоваров`;
+create table `каталогТоваров` (
+	КодТовара int not null auto_increment,
+	
+	Наименование varchar(50) not null,
+	primary key (КодТовара)
+);
+
+
+drop table if exists `склад`;
+create table `склад` (
+	СкладID int not null auto_increment,
+	КодТовара int not null,
+	
+	Спецификация varchar(50) not null,
+	ЦенаОтпускная float not null default 0,
+	Остаток int not null,
+	Место varchar(8) not null,
+	primary key (СкладID),
+	foreign key (`КодТовара`) references `каталогТоваров`(`КодТовара`)
+);
+
+
+
+
+
+
+
+
+drop table if exists `приходСклад`;
+create table `приходСклад` (
+	СкладID int not null,
+	ДатаПоставки timestamp not null default current_timestamp,
+	КодПоставщика int not null,
+	
+	НомерНакладной int not null,
+	Количество int not null default 0,
+	ЦенаПоставки float not null default 0,
+	Приемшик varchar(50) not null,
+	primary key (СкладID, ДатаПоставки),
+	foreign key (`СкладID`) references `склад`(`СкладID`),
+	foreign key (`КодПоставщика`) references `поставщики`(`МенеджерПоставщикаID`)
+);
+
+
+drop table if exists `заказаноТоваров`;
+create table `заказаноТоваров` (
+	ЗаказID int not null auto_increment,
+	СкладID int not null,
+	
+	ЦенаПродажи float not null default 0,
+	Количество int not null default 0,
+	primary key (ЗаказID, СкладID),
+	foreign key (`ЗаказID`) references `заказы`(`ЗаказID`),
+	foreign key (`СкладID`) references `склад`(`СкладID`)
+);

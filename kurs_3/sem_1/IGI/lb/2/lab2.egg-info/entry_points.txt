@@ -1,0 +1,3 @@
+[console_scripts]
+natural_sort = fusked.natural_merge_sort:main
+

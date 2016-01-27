@@ -1,0 +1,16 @@
+{
+  "field_a": 100,
+  "field_b": "some string",
+  "flag": true,
+  "none_field": null,
+  "array": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "dict": {
+    "a": "a",
+    "b": "b"
+  }
+}

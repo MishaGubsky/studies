@@ -1,0 +1,12 @@
+setup.py
+fusked/__init__.py
+fusked/cached.py
+fusked/class_creator.py
+fusked/class_filter.py
+fusked/linear_function.py
+fusked/natural_merge_sort.py
+lab2.egg-info/PKG-INFO
+lab2.egg-info/SOURCES.txt
+lab2.egg-info/dependency_links.txt
+lab2.egg-info/entry_points.txt
+lab2.egg-info/top_level.txt
