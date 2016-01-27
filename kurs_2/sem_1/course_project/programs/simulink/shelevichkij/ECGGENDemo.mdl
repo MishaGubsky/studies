@@ -1,0 +1,856 @@
+Model {
+  Name			  "ECGGENDemo"
+  Version		  4.00
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Wed May 12 16:42:09 2004"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "igors"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed May 12 17:00:09 2004"
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  StartTime		  "0.0"
+  StopTime		  "4096"
+  SolverMode		  "Auto"
+  Solver		  "FixedStepDiscrete"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  ZeroCross		  on
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  ParameterPooling	  on
+  BlockReductionOpt	  on
+  RTWExpressionDepthLimit 5
+  BooleanDataType	  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "ECGGENDemo"
+    Location		    [188, 85, 980, 459]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "ECG_Gen"
+      Ports		      [0, 1]
+      Position		      [165, 38, 270, 132]
+      ForegroundColor	      "blue"
+      AncestorBlock	      "ALTELINK/AltLab/HDL SubSystem"
+      FontSize		      10
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"ECG_Gen"
+	Location		[2, 70, 992, 720]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "AltBus3"
+	  Description		  "Sign Binary Fractionnal"
+	  Ports			  [1, 1]
+	  Position		  [720, 67, 785, 83]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "bus_alteradspbuilder/AltBus"
+	  SourceType		  "AltBus AlteraBlockSet"
+	  sgn			  "Signed Integer"
+	  nodetype		  "Output Port"
+	  bwl			  "10"
+	  bwr			  "8"
+	  sat			  off
+	  rnd			  off
+	  bp			  off
+	  mask_cst		  "0"
+	  LocPin		  "any"
+	  cst			  "0"
+	  modulename		  "AltBus3"
+	  nSgCpl		  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AltBus4"
+	  Description		  "Sign Binary Fractionnal"
+	  Ports			  [1, 1]
+	  Position		  [345, 157, 410, 173]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "bus_alteradspbuilder/AltBus"
+	  SourceType		  "AltBus AlteraBlockSet"
+	  sgn			  "Single Bit"
+	  nodetype		  "Input Port"
+	  bwl			  "1"
+	  bwr			  "0"
+	  sat			  off
+	  rnd			  off
+	  bp			  off
+	  mask_cst		  "0"
+	  LocPin		  "any"
+	  cst			  "0"
+	  modulename		  "AltBus4"
+	  nSgCpl		  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion"
+	  Ports			  [1, 1]
+	  Position		  [375, 211, 450, 229]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "bus_alteradspbuilder/BusConversion"
+	  SourceType		  "SubBus Altera BlockSet"
+	  Inputs		  "Signed Integer"
+	  bwl			  "16"
+	  bwr			  "8"
+	  Outputs		  "Signed Integer"
+	  obwl			  "14"
+	  obwr			  "0"
+	  msb			  "13"
+	  lsb			  "0"
+	  rnd			  off
+	  sat			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion1"
+	  Ports			  [1, 1]
+	  Position		  [375, 291, 450, 309]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "bus_alteradspbuilder/BusConversion"
+	  SourceType		  "SubBus Altera BlockSet"
+	  Inputs		  "Signed Integer"
+	  bwl			  "16"
+	  bwr			  "8"
+	  Outputs		  "Signed Integer"
+	  obwl			  "14"
+	  obwr			  "0"
+	  msb			  "13"
+	  lsb			  "0"
+	  rnd			  off
+	  sat			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion2"
+	  Ports			  [1, 1]
+	  Position		  [370, 371, 445, 389]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "bus_alteradspbuilder/BusConversion"
+	  SourceType		  "SubBus Altera BlockSet"
+	  Inputs		  "Signed Integer"
+	  bwl			  "16"
+	  bwr			  "8"
+	  Outputs		  "Signed Integer"
+	  obwl			  "14"
+	  obwr			  "0"
+	  msb			  "13"
+	  lsb			  "0"
+	  rnd			  off
+	  sat			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion3"
+	  Ports			  [1, 1]
+	  Position		  [370, 456, 445, 474]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "bus_alteradspbuilder/BusConversion"
+	  SourceType		  "SubBus Altera BlockSet"
+	  Inputs		  "Signed Integer"
+	  bwl			  "16"
+	  bwr			  "8"
+	  Outputs		  "Signed Integer"
+	  obwl			  "14"
+	  obwr			  "0"
+	  msb			  "13"
+	  lsb			  "0"
+	  rnd			  off
+	  sat			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion4"
+	  Ports			  [1, 1]
+	  Position		  [760, 351, 835, 369]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "bus_alteradspbuilder/BusConversion"
+	  SourceType		  "SubBus Altera BlockSet"
+	  Inputs		  "Signed Integer"
+	  bwl			  "26"
+	  bwr			  "8"
+	  Outputs		  "Signed Integer"
+	  obwl			  "10"
+	  obwr			  "0"
+	  msb			  "20"
+	  lsb			  "11"
+	  rnd			  off
+	  sat			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion5"
+	  Ports			  [1, 1]
+	  Position		  [175, 71, 250, 89]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "bus_alteradspbuilder/BusConversion"
+	  SourceType		  "SubBus Altera BlockSet"
+	  Inputs		  "Signed Integer"
+	  bwl			  "9"
+	  bwr			  "8"
+	  Outputs		  "Unsigned Integer"
+	  obwl			  "6"
+	  obwr			  "0"
+	  msb			  "8"
+	  lsb			  "4"
+	  rnd			  off
+	  sat			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion6"
+	  Ports			  [1, 1]
+	  Position		  [160, 125, 220, 145]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "bus_alteradspbuilder/BusConversion"
+	  SourceType		  "SubBus Altera BlockSet"
+	  Inputs		  "Signed Integer"
+	  bwl			  "9"
+	  bwr			  "8"
+	  Outputs		  "Unsigned Integer"
+	  obwl			  "4"
+	  obwr			  "0"
+	  msb			  "3"
+	  lsb			  "0"
+	  rnd			  off
+	  sat			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion7"
+	  Ports			  [1, 1]
+	  Position		  [390, 71, 465, 89]
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "bus_alteradspbuilder/BusConversion"
+	  SourceType		  "SubBus Altera BlockSet"
+	  Inputs		  "Signed Integer"
+	  bwl			  "16"
+	  bwr			  "8"
+	  Outputs		  "Signed Integer"
+	  obwl			  "14"
+	  obwr			  "0"
+	  msb			  "13"
+	  lsb			  "0"
+	  rnd			  off
+	  sat			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Increment\nDecrement1"
+	  Ports			  [0, 1]
+	  Position		  [55, 58, 110, 102]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "arithm_alteradspbuilder/Increment\nDecremen"
+"t"
+	  SourceType		  "IncDec AlteraBlockSet"
+	  BusType		  "Signed Integer"
+	  bwl			  "9"
+	  bwr			  "4"
+	  direction		  "Increment"
+	  cst			  "0"
+	  clken			  off
+	  MaskValue		  "1"
+	  ntsamp		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay1"
+	  Ports			  [2, 1]
+	  Position		  [515, 480, 555, 520]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "store_alteradspbuilder/Memory Delay"
+	  SourceType		  "ShiftTaps Altera Blockset"
+	  bwaddr		  "1"
+	  depth			  "1"
+	  cst			  off
+	  clken			  on
+	  eab			  on
+	  vDepthAltr		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay2"
+	  Ports			  [2, 1]
+	  Position		  [515, 400, 555, 440]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "store_alteradspbuilder/Memory Delay"
+	  SourceType		  "ShiftTaps Altera Blockset"
+	  bwaddr		  "1"
+	  depth			  "1"
+	  cst			  off
+	  clken			  on
+	  eab			  on
+	  vDepthAltr		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay4"
+	  Ports			  [2, 1]
+	  Position		  [515, 320, 555, 360]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "store_alteradspbuilder/Memory Delay"
+	  SourceType		  "ShiftTaps Altera Blockset"
+	  bwaddr		  "1"
+	  depth			  "1"
+	  cst			  off
+	  clken			  on
+	  eab			  on
+	  vDepthAltr		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay5"
+	  Ports			  [2, 1]
+	  Position		  [515, 240, 555, 280]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "store_alteradspbuilder/Memory Delay"
+	  SourceType		  "ShiftTaps Altera Blockset"
+	  bwaddr		  "1"
+	  depth			  "1"
+	  cst			  off
+	  clken			  on
+	  eab			  on
+	  vDepthAltr		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Multiply Add"
+	  Ports			  [8, 1]
+	  Position		  [610, 206, 735, 514]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "arithm_alteradspbuilder/Multiply Add"
+	  SourceType		  "AltMultAdd Altera BlockSet"
+	  depth			  "4"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  direction		  "Add Add"
+	  pipeline		  "No Register"
+	  clken			  off
+	  eab			  off
+	  cst			  off
+	  Constantvalues	  "[1 1 1 1]"
+	  gain			  "[1.000000,1.000000,1.000000,1.000000]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Pattern 1"
+	  Ports			  [0, 1]
+	  Position		  [55, 154, 120, 176]
+	  ForegroundColor	  "blue"
+	  Priority		  "28"
+	  SourceBlock		  "store_alteradspbuilder/Pattern"
+	  SourceType		  "Synchronizer Altera BlockSet"
+	  MaskValue		  "0000000000000001"
+	  clken			  off
+	  ntsamp		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ROM EAB"
+	  Ports			  [1, 1]
+	  Position		  [275, 193, 355, 247]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "store_alteradspbuilder/ROM EAB"
+	  SourceType		  "LROM Altera BlockSet"
+	  BusType		  "Signed Integer"
+	  bwl			  "16"
+	  bwr			  "0"
+	  bwaddr		  "4"
+	  MaskValue		  "1"
+	  Inputs		  "spl01604.hex"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ROM EAB1"
+	  Ports			  [1, 1]
+	  Position		  [275, 273, 355, 327]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "store_alteradspbuilder/ROM EAB"
+	  SourceType		  "LROM Altera BlockSet"
+	  BusType		  "Signed Integer"
+	  bwl			  "16"
+	  bwr			  "0"
+	  bwaddr		  "4"
+	  MaskValue		  "1"
+	  Inputs		  "spl01603.hex"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ROM EAB2"
+	  Ports			  [1, 1]
+	  Position		  [275, 353, 355, 407]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "store_alteradspbuilder/ROM EAB"
+	  SourceType		  "LROM Altera BlockSet"
+	  BusType		  "Signed Integer"
+	  bwl			  "16"
+	  bwr			  "0"
+	  bwaddr		  "4"
+	  MaskValue		  "1"
+	  Inputs		  "spl01602.hex"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ROM EAB3"
+	  Ports			  [1, 1]
+	  Position		  [275, 438, 355, 492]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "store_alteradspbuilder/ROM EAB"
+	  SourceType		  "LROM Altera BlockSet"
+	  BusType		  "Signed Integer"
+	  bwl			  "16"
+	  bwr			  "0"
+	  bwaddr		  "4"
+	  MaskValue		  "1"
+	  Inputs		  "spl01601.hex"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ROM ECG"
+	  Ports			  [1, 1]
+	  Position		  [280, 53, 360, 107]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "store_alteradspbuilder/ROM EAB"
+	  SourceType		  "LROM Altera BlockSet"
+	  BusType		  "Signed Integer"
+	  bwl			  "16"
+	  bwr			  "0"
+	  bwaddr		  "5"
+	  MaskValue		  "1"
+	  Inputs		  "ecg32.hex"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out[9:0]"
+	  Position		  [815, 68, 845, 82]
+	  ForegroundColor	  "blue"
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "AltBus3"
+	  SrcPort		  1
+	  DstBlock		  "Out[9:0]"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [0, 0]
+	  SrcBlock		  "BusConversion6"
+	  SrcPort		  1
+	  Points		  [0, 0; 0, 85]
+	  Branch {
+	    DstBlock		    "ROM EAB"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 80]
+	    Branch {
+	      DstBlock		      "ROM EAB1"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 80]
+	      Branch {
+		DstBlock		"ROM EAB2"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 85]
+		DstBlock		"ROM EAB3"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "ROM EAB"
+	  SrcPort		  1
+	  DstBlock		  "BusConversion"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ROM EAB1"
+	  SrcPort		  1
+	  DstBlock		  "BusConversion1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ROM EAB2"
+	  SrcPort		  1
+	  DstBlock		  "BusConversion2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ROM EAB3"
+	  SrcPort		  1
+	  DstBlock		  "BusConversion3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BusConversion"
+	  SrcPort		  1
+	  DstBlock		  "Multiply Add"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BusConversion1"
+	  SrcPort		  1
+	  DstBlock		  "Multiply Add"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "BusConversion2"
+	  SrcPort		  1
+	  DstBlock		  "Multiply Add"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "BusConversion3"
+	  SrcPort		  1
+	  Points		  [145, 0]
+	  DstBlock		  "Multiply Add"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "Multiply Add"
+	  SrcPort		  1
+	  DstBlock		  "BusConversion4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay5"
+	  SrcPort		  1
+	  Points		  [0, 0; 15, 0]
+	  Branch {
+	    DstBlock		    "Multiply Add"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 50; -75, 0]
+	    DstBlock		    "Memory Delay4"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Memory Delay4"
+	  SrcPort		  1
+	  Points		  [0, 0; 15, 0]
+	  Branch {
+	    DstBlock		    "Multiply Add"
+	    DstPort		    4
+	  }
+	  Branch {
+	    Points		    [0, 50; -75, 0]
+	    DstBlock		    "Memory Delay2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Memory Delay2"
+	  SrcPort		  1
+	  Points		  [0, 0; 15, 0]
+	  Branch {
+	    DstBlock		    "Multiply Add"
+	    DstPort		    6
+	  }
+	  Branch {
+	    Labels		    [1, 0]
+	    Points		    [0, 55; -75, 0]
+	    DstBlock		    "Memory Delay1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Memory Delay1"
+	  SrcPort		  1
+	  DstBlock		  "Multiply Add"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "Pattern 1"
+	  SrcPort		  1
+	  DstBlock		  "AltBus4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BusConversion4"
+	  SrcPort		  1
+	  Points		  [0, -200; -185, 0; 0, -85]
+	  DstBlock		  "AltBus3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "AltBus4"
+	  SrcPort		  1
+	  Points		  [60, 0; 0, 105]
+	  Branch {
+	    DstBlock		    "Memory Delay5"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 80]
+	    Branch {
+	      DstBlock		      "Memory Delay4"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, 80]
+	      Branch {
+		Points			[0, 80]
+		DstBlock		"Memory Delay1"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Memory Delay2"
+		DstPort			2
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "ROM ECG"
+	  SrcPort		  1
+	  DstBlock		  "BusConversion7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BusConversion5"
+	  SrcPort		  1
+	  DstBlock		  "ROM ECG"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Increment\nDecrement1"
+	  SrcPort		  1
+	  Points		  [0, 0; 15, 0]
+	  Branch {
+	    DstBlock		    "BusConversion5"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 55]
+	    DstBlock		    "BusConversion6"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "BusConversion7"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "Memory Delay5"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      Ports		      [1]
+      Position		      [375, 51, 440, 119]
+      Floating		      off
+      Location		      [128, 233, 843, 506]
+      Open		      on
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+      }
+      Grid		      "on"
+      TimeRange		      "4096"
+      YMin		      "-600"
+      YMax		      "400"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Line {
+      SrcBlock		      "ECG_Gen"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      1
+    }
+  }
+}

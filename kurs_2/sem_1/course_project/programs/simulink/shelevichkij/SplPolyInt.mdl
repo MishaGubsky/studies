@@ -1,0 +1,2097 @@
+Model {
+  Name			  "SplPolyInt"
+  Version		  7.9
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.2"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  Description		  "10 разрядный сплайн-интерполятор.\nПовышение частоты дискретизации в 4 раза.\nИспользует кубический "
+  "эрмитов сплайн.\n"
+  SavedCharacterEncoding  "windows-1251"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  Created		  "Tue May 11 10:06:15 2004"
+  Creator		  "Igor Shelevitsky   sheleviv@mail.ru"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "igors"
+  LastModifiedBy	  "igors"
+  ModifiedDateFormat	  "Tue May 11 10:18:35 2004"
+  LastModifiedDate	  "Tue May 11 10:18:35 2004"
+  RTWModifiedTimeStamp	  339659473
+  ModelVersionFormat	  "1.2"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.12.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.12.0"
+	  StartTime		  "0.0"
+	  StopTime		  "1023"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.12.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.12.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.12.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Enable All"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "None"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.12.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.12.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.12.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.12.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    9
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.12.0"
+	      Array {
+		Type			"Cell"
+		Dimension		21
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.12.0"
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      CodeReplacementLibrary  "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      CodeExecutionProfiling  off
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 360, 135, 1240, 765 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Array"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Sin
+      SineType		      "Time based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Bias		      "0"
+      Frequency		      "1"
+      Phase		      "0"
+      Samples		      "10"
+      Offset		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+  }
+  System {
+    Name		    "SplPolyInt"
+    Location		    [853, 403, 1601, 822]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "9"
+    Block {
+      BlockType		      Reference
+      Name		      "Downsample1"
+      SID		      "9"
+      Ports		      [1, 1]
+      Position		      [230, 123, 265, 157]
+      ZOrder		      -4
+      LibraryVersion	      "1.726"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      SourceBlock	      "dspsigops/Downsample"
+      SourceType	      "Downsample"
+      N			      "2"
+      phase		      "0"
+      InputProcessing	      "Columns as channels (frame based)"
+      RateOptions	      "Enforce single-rate processing"
+      smode		      "Allow multirate"
+      fmode		      "Maintain input frame size"
+      ic		      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Floating\nScope"
+      SID		      "2"
+      Ports		      [3]
+      Position		      [590, 47, 640, 123]
+      Floating		      off
+      Location		      [83, 147, 624, 491]
+      Open		      off
+      NumInputPorts	      "3"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+      }
+      ShowLegends	      off
+      TimeRange		      "128"
+      YMin		      "-1000~-1000~-1200"
+      YMax		      "1000~1000~1200"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "InputData1"
+      SID		      "3"
+      Description	      "Sign Binary Fractionnal"
+      Ports		      [1, 1]
+      Position		      [130, 132, 195, 148]
+      ForegroundColor	      "blue"
+      SourceBlock	      "bus_alteradspbuilder/Input"
+      SourceType	      "AltBus AlteraBlockSet"
+      sgn		      "Signed Integer"
+      nodetype		      "Input Port"
+      bwl		      "10"
+      bwr		      "8"
+      sat		      off
+      rnd		      off
+      bp		      off
+      mask_cst		      "0"
+      LocPin		      "any"
+      cst		      "0"
+      modulename	      "InputData1"
+      ppat		      "D:\\MATLAB6p1\\work\\DSPBuilder_SPLIc_altera"
+      nSgCpl		      "0"
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "Sine Wave"
+      SID		      "4"
+      Ports		      [0, 1]
+      Position		      [40, 116, 80, 164]
+      Amplitude		      "512"
+      Frequency		      "0.1"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "SplPLInt04"
+      SID		      "5"
+      Ports		      [1, 1]
+      Position		      [365, 104, 460, 176]
+      ForegroundColor	      "blue"
+      AncestorBlock	      "ALTELINK/AltLab/HDL SubSystem"
+      LibraryVersion	      "*"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"SplPLInt04"
+	Location		[810, 82, 1573, 854]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"45"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In[9:0]"
+	  SID			  "5:1"
+	  Position		  [15, 18, 45, 32]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Add"
+	  SID			  "5:45"
+	  Ports			  [2, 1]
+	  Position		  [670, 469, 700, 556]
+	  ZOrder		  -2
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Adder"
+	  SID			  "5:2"
+	  Ports			  [4, 1]
+	  Position		  [197, 265, 508, 305]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Parallel \nAdder Subtractor"
+	  SourceType		  "Sum AlteraBlockSet"
+	  Inputs		  "4"
+	  direction		  "++++"
+	  pipeline		  off
+	  clken			  off
+	  MaskValue		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Adder1"
+	  SID			  "5:3"
+	  Ports			  [4, 1]
+	  Position		  [202, 500, 513, 540]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Parallel \nAdder Subtractor"
+	  SourceType		  "Sum AlteraBlockSet"
+	  Inputs		  "4"
+	  direction		  "++++"
+	  pipeline		  off
+	  clken			  off
+	  MaskValue		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Adder2"
+	  SID			  "5:4"
+	  Ports			  [4, 1]
+	  Position		  [207, 730, 518, 770]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Parallel \nAdder Subtractor"
+	  SourceType		  "Sum AlteraBlockSet"
+	  Inputs		  "4"
+	  direction		  "++++"
+	  pipeline		  off
+	  clken			  off
+	  MaskValue		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Adder3"
+	  SID			  "5:5"
+	  Ports			  [2, 1]
+	  Position		  [554, 260, 621, 315]
+	  BlockRotation		  270
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Parallel \nAdder Subtractor"
+	  SourceType		  "Sum AlteraBlockSet"
+	  Inputs		  "2"
+	  direction		  "++"
+	  pipeline		  off
+	  clken			  off
+	  MaskValue		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Adder4"
+	  SID			  "5:6"
+	  Ports			  [2, 1]
+	  Position		  [559, 465, 626, 520]
+	  BlockRotation		  270
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Parallel \nAdder Subtractor"
+	  SourceType		  "Sum AlteraBlockSet"
+	  Inputs		  "2"
+	  direction		  "++"
+	  pipeline		  off
+	  clken			  off
+	  MaskValue		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Adder5"
+	  SID			  "5:7"
+	  Ports			  [2, 1]
+	  Position		  [605, 50, 670, 105]
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Parallel \nAdder Subtractor"
+	  SourceType		  "Sum AlteraBlockSet"
+	  Inputs		  "2"
+	  direction		  "++"
+	  pipeline		  off
+	  clken			  off
+	  MaskValue		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AltBus"
+	  SID			  "5:8"
+	  Description		  "Sign Binary Fractionnal"
+	  Ports			  [1, 1]
+	  Position		  [65, 17, 130, 33]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "bus_alteradspbuilder/AltBus"
+	  SourceType		  "AltBus AlteraBlockSet"
+	  sgn			  "Signed Integer"
+	  nodetype		  "Input Port"
+	  bwl			  "10"
+	  bwr			  "8"
+	  sat			  off
+	  rnd			  off
+	  bp			  off
+	  mask_cst		  "0"
+	  LocPin		  "any"
+	  cst			  "0"
+	  modulename		  "AltBus"
+	  nSgCpl		  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AltBus1"
+	  SID			  "5:9"
+	  Description		  "Sign Binary Fractionnal"
+	  Ports			  [1, 1]
+	  Position		  [830, 72, 895, 88]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "bus_alteradspbuilder/AltBus"
+	  SourceType		  "AltBus AlteraBlockSet"
+	  sgn			  "Signed Integer"
+	  nodetype		  "Output Port"
+	  bwl			  "10"
+	  bwr			  "8"
+	  sat			  off
+	  rnd			  off
+	  bp			  off
+	  mask_cst		  "0"
+	  LocPin		  "any"
+	  cst			  "0"
+	  modulename		  "AltBus1"
+	  nSgCpl		  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion"
+	  SID			  "5:10"
+	  Ports			  [1, 1]
+	  Position		  [475, 56, 550, 74]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "bus_alteradspbuilder/BusConversion"
+	  SourceType		  "SubBus Altera BlockSet"
+	  Inputs		  "Signed Integer"
+	  bwl			  "23"
+	  bwr			  "8"
+	  Outputs		  "Signed Integer"
+	  obwl			  "14"
+	  obwr			  "0"
+	  msb			  "22"
+	  lsb			  "9"
+	  rnd			  off
+	  sat			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion1"
+	  SID			  "5:11"
+	  Ports			  [1, 1]
+	  Position		  [455, 321, 530, 339]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "bus_alteradspbuilder/BusConversion"
+	  SourceType		  "SubBus Altera BlockSet"
+	  Inputs		  "Signed Integer"
+	  bwl			  "23"
+	  bwr			  "8"
+	  Outputs		  "Signed Integer"
+	  obwl			  "14"
+	  obwr			  "0"
+	  msb			  "22"
+	  lsb			  "9"
+	  rnd			  off
+	  sat			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion2"
+	  SID			  "5:12"
+	  Ports			  [1, 1]
+	  Position		  [460, 541, 535, 559]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "bus_alteradspbuilder/BusConversion"
+	  SourceType		  "SubBus Altera BlockSet"
+	  Inputs		  "Signed Integer"
+	  bwl			  "23"
+	  bwr			  "8"
+	  Outputs		  "Signed Integer"
+	  obwl			  "14"
+	  obwr			  "0"
+	  msb			  "22"
+	  lsb			  "9"
+	  rnd			  off
+	  sat			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion3"
+	  SID			  "5:13"
+	  Ports			  [1, 1]
+	  Position		  [460, 781, 535, 799]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "bus_alteradspbuilder/BusConversion"
+	  SourceType		  "SubBus Altera BlockSet"
+	  Inputs		  "Signed Integer"
+	  bwl			  "23"
+	  bwr			  "8"
+	  Outputs		  "Signed Integer"
+	  obwl			  "14"
+	  obwr			  "0"
+	  msb			  "22"
+	  lsb			  "9"
+	  rnd			  off
+	  sat			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion4"
+	  SID			  "5:14"
+	  Ports			  [1, 1]
+	  Position		  [700, 71, 775, 89]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "bus_alteradspbuilder/BusConversion"
+	  SourceType		  "SubBus Altera BlockSet"
+	  Inputs		  "Signed Integer"
+	  bwl			  "15"
+	  bwr			  "8"
+	  Outputs		  "Signed Integer"
+	  obwl			  "10"
+	  obwr			  "0"
+	  msb			  "14"
+	  lsb			  "5"
+	  rnd			  off
+	  sat			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay"
+	  SID			  "5:15"
+	  Ports			  [1, 1]
+	  Position		  [567, 185, 613, 235]
+	  BlockRotation		  270
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "store_alteradspbuilder/Delay"
+	  SourceType		  "Delay AlteraBlockSet"
+	  depth			  "1"
+	  clken			  off
+	  MaskValue		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay1"
+	  SID			  "5:16"
+	  Ports			  [1, 1]
+	  Position		  [572, 385, 618, 435]
+	  BlockRotation		  270
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "store_alteradspbuilder/Delay"
+	  SourceType		  "Delay AlteraBlockSet"
+	  depth			  "1"
+	  clken			  off
+	  MaskValue		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay2"
+	  SID			  "5:17"
+	  Ports			  [1, 1]
+	  Position		  [572, 580, 618, 630]
+	  BlockRotation		  270
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "store_alteradspbuilder/Delay"
+	  SourceType		  "Delay AlteraBlockSet"
+	  depth			  "1"
+	  clken			  off
+	  MaskValue		  "1"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  SID			  "5:42"
+	  Position		  [670, 385, 700, 415]
+	  ZOrder		  -11
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "MD"
+	  SID			  "5:18"
+	  Ports			  [1, 1]
+	  Position		  [190, 127, 240, 173]
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "store_alteradspbuilder/Memory Delay"
+	  SourceType		  "ShiftTaps Altera Blockset"
+	  bwaddr		  "1"
+	  depth			  "4"
+	  cst			  off
+	  clken			  off
+	  eab			  on
+	  vDepthAltr		  "4"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "MD1"
+	  SID			  "5:19"
+	  Ports			  [1, 1]
+	  Position		  [285, 126, 335, 174]
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "store_alteradspbuilder/Memory Delay"
+	  SourceType		  "ShiftTaps Altera Blockset"
+	  bwaddr		  "1"
+	  depth			  "4"
+	  cst			  off
+	  clken			  off
+	  eab			  on
+	  vDepthAltr		  "4"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "MD2"
+	  SID			  "5:20"
+	  Ports			  [1, 1]
+	  Position		  [385, 127, 435, 173]
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "store_alteradspbuilder/Memory Delay"
+	  SourceType		  "ShiftTaps Altera Blockset"
+	  bwaddr		  "1"
+	  depth			  "4"
+	  cst			  off
+	  clken			  off
+	  eab			  on
+	  vDepthAltr		  "4"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "MD3"
+	  SID			  "5:21"
+	  Ports			  [1, 1]
+	  Position		  [195, 357, 245, 403]
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "store_alteradspbuilder/Memory Delay"
+	  SourceType		  "ShiftTaps Altera Blockset"
+	  bwaddr		  "1"
+	  depth			  "4"
+	  cst			  off
+	  clken			  off
+	  eab			  on
+	  vDepthAltr		  "4"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "MD4"
+	  SID			  "5:22"
+	  Ports			  [1, 1]
+	  Position		  [290, 356, 340, 404]
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "store_alteradspbuilder/Memory Delay"
+	  SourceType		  "ShiftTaps Altera Blockset"
+	  bwaddr		  "1"
+	  depth			  "4"
+	  cst			  off
+	  clken			  off
+	  eab			  on
+	  vDepthAltr		  "4"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "MD5"
+	  SID			  "5:23"
+	  Ports			  [1, 1]
+	  Position		  [390, 357, 440, 403]
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "store_alteradspbuilder/Memory Delay"
+	  SourceType		  "ShiftTaps Altera Blockset"
+	  bwaddr		  "1"
+	  depth			  "4"
+	  cst			  off
+	  clken			  off
+	  eab			  on
+	  vDepthAltr		  "4"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "MD6"
+	  SID			  "5:24"
+	  Ports			  [1, 1]
+	  Position		  [200, 592, 250, 638]
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "store_alteradspbuilder/Memory Delay"
+	  SourceType		  "ShiftTaps Altera Blockset"
+	  bwaddr		  "1"
+	  depth			  "4"
+	  cst			  off
+	  clken			  off
+	  eab			  on
+	  vDepthAltr		  "4"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "MD7"
+	  SID			  "5:25"
+	  Ports			  [1, 1]
+	  Position		  [295, 591, 345, 639]
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "store_alteradspbuilder/Memory Delay"
+	  SourceType		  "ShiftTaps Altera Blockset"
+	  bwaddr		  "1"
+	  depth			  "4"
+	  cst			  off
+	  clken			  off
+	  eab			  on
+	  vDepthAltr		  "4"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "MD8"
+	  SID			  "5:26"
+	  Ports			  [1, 1]
+	  Position		  [395, 592, 445, 638]
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "store_alteradspbuilder/Memory Delay"
+	  SourceType		  "ShiftTaps Altera Blockset"
+	  bwaddr		  "1"
+	  depth			  "4"
+	  cst			  off
+	  clken			  off
+	  eab			  on
+	  vDepthAltr		  "4"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "MD9"
+	  SID			  "5:27"
+	  Ports			  [1, 1]
+	  Position		  [285, 41, 335, 89]
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "store_alteradspbuilder/Memory Delay"
+	  SourceType		  "ShiftTaps Altera Blockset"
+	  bwaddr		  "1"
+	  depth			  "4"
+	  cst			  off
+	  clken			  off
+	  eab			  on
+	  vDepthAltr		  "4"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Subtract"
+	  SID			  "5:43"
+	  Ports			  [2, 1]
+	  Position		  [675, 585, 705, 615]
+	  ZOrder		  -31
+	  BlockRotation		  270
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  IconShape		  "round"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "X0"
+	  SID			  "5:28"
+	  Ports			  [1, 1]
+	  Position		  [240, 195, 290, 235]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Gain"
+	  SourceType		  "Gain AlteraBlockSet"
+	  vgain			  "928"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  pipeline		  "0"
+	  lpm			  off
+	  clken			  off
+	  MaskValue		  "1"
+	  gain			  "928"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "X1"
+	  SID			  "5:29"
+	  Ports			  [1, 1]
+	  Position		  [340, 195, 390, 235]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Gain"
+	  SourceType		  "Gain AlteraBlockSet"
+	  vgain			  "3552"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  pipeline		  "0"
+	  lpm			  off
+	  clken			  off
+	  MaskValue		  "1"
+	  gain			  "3552"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "X10"
+	  SID			  "5:30"
+	  Ports			  [1, 1]
+	  Position		  [450, 660, 500, 700]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Gain"
+	  SourceType		  "Gain AlteraBlockSet"
+	  vgain			  "-96"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  pipeline		  "0"
+	  lpm			  off
+	  clken			  off
+	  MaskValue		  "1"
+	  gain			  "-96"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "X11"
+	  SID			  "5:31"
+	  Ports			  [1, 1]
+	  Position		  [150, 660, 200, 700]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Gain"
+	  SourceType		  "Gain AlteraBlockSet"
+	  vgain			  "-288"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  pipeline		  "0"
+	  lpm			  off
+	  clken			  off
+	  MaskValue		  "1"
+	  gain			  "-288"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "X12"
+	  SID			  "5:32"
+	  Ports			  [1, 1]
+	  Position		  [390, 45, 440, 85]
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Gain"
+	  SourceType		  "Gain AlteraBlockSet"
+	  vgain			  "4096"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  pipeline		  "0"
+	  lpm			  off
+	  clken			  off
+	  MaskValue		  "1"
+	  gain			  "4096"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "X2"
+	  SID			  "5:33"
+	  Ports			  [1, 1]
+	  Position		  [440, 195, 490, 235]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Gain"
+	  SourceType		  "Gain AlteraBlockSet"
+	  vgain			  "-288"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  pipeline		  "0"
+	  lpm			  off
+	  clken			  off
+	  MaskValue		  "1"
+	  gain			  "-288"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "X3"
+	  SID			  "5:34"
+	  Ports			  [1, 1]
+	  Position		  [140, 195, 190, 235]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Gain"
+	  SourceType		  "Gain AlteraBlockSet"
+	  vgain			  "-96"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  pipeline		  "0"
+	  lpm			  off
+	  clken			  off
+	  MaskValue		  "1"
+	  gain			  "-96"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "X4"
+	  SID			  "5:35"
+	  Ports			  [1, 1]
+	  Position		  [244, 425, 296, 470]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Gain"
+	  SourceType		  "Gain AlteraBlockSet"
+	  vgain			  "2304"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  pipeline		  "0"
+	  lpm			  off
+	  clken			  off
+	  MaskValue		  "1"
+	  gain			  "2304"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "X5"
+	  SID			  "5:36"
+	  Ports			  [1, 1]
+	  Position		  [345, 425, 395, 465]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Gain"
+	  SourceType		  "Gain AlteraBlockSet"
+	  vgain			  "2304"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  pipeline		  "0"
+	  lpm			  off
+	  clken			  off
+	  MaskValue		  "1"
+	  gain			  "2304"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "X6"
+	  SID			  "5:37"
+	  Ports			  [1, 1]
+	  Position		  [445, 425, 495, 465]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Gain"
+	  SourceType		  "Gain AlteraBlockSet"
+	  vgain			  "-256"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  pipeline		  "0"
+	  lpm			  off
+	  clken			  off
+	  MaskValue		  "1"
+	  gain			  "-256"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "X7"
+	  SID			  "5:38"
+	  Ports			  [1, 1]
+	  Position		  [144, 425, 196, 470]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Gain"
+	  SourceType		  "Gain AlteraBlockSet"
+	  vgain			  "-256"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  pipeline		  "0"
+	  lpm			  off
+	  clken			  off
+	  MaskValue		  "1"
+	  gain			  "-256"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "X8"
+	  SID			  "5:39"
+	  Ports			  [1, 1]
+	  Position		  [250, 660, 300, 700]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Gain"
+	  SourceType		  "Gain AlteraBlockSet"
+	  vgain			  "3552"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  pipeline		  "0"
+	  lpm			  off
+	  clken			  off
+	  MaskValue		  "1"
+	  gain			  "3552"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "X9"
+	  SID			  "5:40"
+	  Ports			  [1, 1]
+	  Position		  [350, 660, 400, 700]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "arithm_alteradspbuilder/Gain"
+	  SourceType		  "Gain AlteraBlockSet"
+	  vgain			  "928"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  pipeline		  "0"
+	  lpm			  off
+	  clken			  off
+	  MaskValue		  "1"
+	  gain			  "928"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out[9:0]"
+	  SID			  "5:41"
+	  Position		  [925, 73, 955, 87]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "AltBus1"
+	  SrcPort		  1
+	  DstBlock		  "Out[9:0]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In[9:0]"
+	  SrcPort		  1
+	  DstBlock		  "AltBus"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "AltBus"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, 25; -45, 0; 0, 15]
+	  Branch {
+	    Points		    [0, 85]
+	    Branch {
+	      Points		      [60, 0]
+	      Branch {
+		DstBlock		"MD"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"X3"
+		DstPort			1
+	      }
+	    }
+	    Branch {
+	      Points		      [0, 230]
+	      Branch {
+		Points			[65, 0]
+		Branch {
+		  DstBlock		  "MD3"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "X7"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Points			[0, 235; 70, 0]
+		Branch {
+		  DstBlock		  "MD6"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "X11"
+		  DstPort		  1
+		}
+	      }
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "MD9"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "MD"
+	  SrcPort		  1
+	  Points		  [0, 0; 20, 0]
+	  Branch {
+	    DstBlock		    "X0"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "MD1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "X2"
+	  SrcPort		  1
+	  DstBlock		  "Adder"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "X1"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  DstBlock		  "Adder"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "X0"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  DstBlock		  "Adder"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "X3"
+	  SrcPort		  1
+	  Points		  [75, 0]
+	  DstBlock		  "Adder"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "MD1"
+	  SrcPort		  1
+	  Points		  [0, 0; 25, 0]
+	  Branch {
+	    DstBlock		    "MD2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "X1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "MD2"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  DstBlock		  "X2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "MD3"
+	  SrcPort		  1
+	  Points		  [0, 0; 20, 0]
+	  Branch {
+	    DstBlock		    "X4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "MD4"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "X6"
+	  SrcPort		  1
+	  DstBlock		  "Adder1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "X5"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  DstBlock		  "Adder1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "X4"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  DstBlock		  "Adder1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "X7"
+	  SrcPort		  1
+	  Points		  [75, 0]
+	  DstBlock		  "Adder1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "MD4"
+	  SrcPort		  1
+	  Points		  [0, 0; 25, 0]
+	  Branch {
+	    DstBlock		    "MD5"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "X5"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "MD5"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  DstBlock		  "X6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "MD6"
+	  SrcPort		  1
+	  Points		  [0, 0; 20, 0]
+	  Branch {
+	    DstBlock		    "X8"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "MD7"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "X10"
+	  SrcPort		  1
+	  DstBlock		  "Adder2"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "X9"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  DstBlock		  "Adder2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "X8"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  DstBlock		  "Adder2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "X11"
+	  SrcPort		  1
+	  Points		  [75, 0]
+	  DstBlock		  "Adder2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "MD7"
+	  SrcPort		  1
+	  Points		  [0, 0; 25, 0]
+	  Branch {
+	    DstBlock		    "MD8"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "X9"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "MD8"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  DstBlock		  "X10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Adder3"
+	  SrcPort		  1
+	  DstBlock		  "Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Adder4"
+	  SrcPort		  1
+	  DstBlock		  "Delay1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay1"
+	  SrcPort		  1
+	  Points		  [0, -50]
+	  DstBlock		  "Adder3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Delay2"
+	  SrcPort		  1
+	  Points		  [0, -25; 15, 0]
+	  DstBlock		  "Adder4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "MD9"
+	  SrcPort		  1
+	  DstBlock		  "X12"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay"
+	  SrcPort		  1
+	  DstBlock		  "Adder5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "X12"
+	  SrcPort		  1
+	  DstBlock		  "BusConversion"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BusConversion"
+	  SrcPort		  1
+	  DstBlock		  "Adder5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Adder"
+	  SrcPort		  1
+	  Points		  [0, 20]
+	  DstBlock		  "BusConversion1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BusConversion1"
+	  SrcPort		  1
+	  DstBlock		  "Adder3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BusConversion2"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  DstBlock		  "Adder4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Adder1"
+	  SrcPort		  1
+	  Points		  [0, 5]
+	  DstBlock		  "BusConversion2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Adder2"
+	  SrcPort		  1
+	  Points		  [0, 15]
+	  DstBlock		  "BusConversion3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BusConversion3"
+	  SrcPort		  1
+	  Points		  [55, 0]
+	  DstBlock		  "Delay2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Adder5"
+	  SrcPort		  1
+	  DstBlock		  "BusConversion4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BusConversion4"
+	  SrcPort		  1
+	  DstBlock		  "AltBus1"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Sine Wave"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"InputData1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -80]
+	DstBlock		"Floating\nScope"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "InputData1"
+      SrcPort		      1
+      DstBlock		      "Downsample1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Downsample1"
+      SrcPort		      1
+      Points		      [40, 0]
+      Branch {
+	Points			[0, 0; 0, -55]
+	DstBlock		"Floating\nScope"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"SplPLInt04"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "SplPLInt04"
+      SrcPort		      1
+      Points		      [75, 0; 0, -30]
+      DstBlock		      "Floating\nScope"
+      DstPort		      3
+    }
+    Annotation {
+      SID		      "6"
+      Name		      "Spline interpolation of signal\n Igor Shelevitsky\n"
+      Position		      [582, 241]
+      FontName		      "Times New Roman"
+      FontSize		      12
+      FontWeight	      "bold"
+    }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+}
