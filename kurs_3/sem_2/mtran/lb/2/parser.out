@@ -1,0 +1,124 @@
+Created by PLY version 3.8 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    KEYWORD
+    DELIMITER
+    NUMBER
+    METHOD_OF_CLASS_CONSOLE
+    BIN_OPERATOR
+    MATH_OPERATOR
+    RESERVED
+    BOOLEAN
+    LOGICAL_OPERATOR
+    ASSIGNMENT_OPERATOR
+
+Grammar
+
+Rule 0     S' -> block
+Rule 1     block -> LBRACE body RBRACE
+Rule 2     body -> expression
+Rule 3     expression -> declaration expression
+Rule 4     expression -> declaration_with_assignment expression
+Rule 5     expression -> assignment expression
+Rule 6     expression -> if expression
+Rule 7     expression -> else expression
+Rule 8     expression -> function expression
+Rule 9     expression -> empty
+Rule 10    expression -> while expression
+Rule 11    declaration -> type ID SEMICOLON
+Rule 12    declaration_with_assignment -> type ID EQUELS arithmetic_expression SEMICOLON
+Rule 13    type -> INT_TYPE
+Rule 14    type -> DOUBLE_TYPE
+Rule 15    type -> FLOAT_TYPE
+Rule 16    type -> STRING_TYPE
+Rule 17    empty -> <empty>
+Rule 18    assignment -> ID EQUELS arithmetic_expression SEMICOLON
+Rule 19    arithmetic_expression -> ID PLUS arithmetic_expression
+Rule 20    arithmetic_expression -> ID MINUS arithmetic_expression
+Rule 21    arithmetic_expression -> ID MUL arithmetic_expression
+Rule 22    arithmetic_expression -> ID DIVISION arithmetic_expression
+Rule 23    arithmetic_expression -> INTEGER PLUS arithmetic_expression
+Rule 24    arithmetic_expression -> INTEGER MINUS arithmetic_expression
+Rule 25    arithmetic_expression -> INTEGER MUL arithmetic_expression
+Rule 26    arithmetic_expression -> INTEGER DIVISION arithmetic_expression
+Rule 27    arithmetic_expression -> DOUBLE PLUS arithmetic_expression
+Rule 28    arithmetic_expression -> DOUBLE MINUS arithmetic_expression
+Rule 29    arithmetic_expression -> DOUBLE MUL arithmetic_expression
+Rule 30    arithmetic_expression -> DOUBLE DIVISION arithmetic_expression
+Rule 31    arithmetic_expression -> INTEGER
+Rule 32    arithmetic_expression -> MINUS INTEGER
+Rule 33    arithmetic_expression -> DOUBLE
+Rule 34    arithmetic_expression -> MINUS DOUBLE
+Rule 35    arithmetic_expression -> ID
+Rule 36    arithmetic_expression -> STRING
+Rule 37    function -> STATIC_CLASS_WITH_METHOD LPAREN arithmetic_expression RPAREN SEMICOLON
+Rule 38    predicate -> ID EQUELS arithmetic_expression
+Rule 39    predicate -> INTEGER EQUELS arithmetic_expression
+Rule 40    predicate -> DOUBLE EQUELS arithmetic_expression
+Rule 41    predicate -> ID MORE arithmetic_expression
+Rule 42    predicate -> INTEGER DEQUELS arithmetic_expression
+Rule 43    predicate -> ID DEQUELS arithmetic_expression
+Rule 44    predicate -> DOUBLE DEQUELS arithmetic_expression
+Rule 45    predicate -> INTEGER
+Rule 46    predicate -> DOUBLE
+Rule 47    predicate -> ID
+Rule 48    while -> WHILE LPAREN predicate RPAREN block
+Rule 49    if -> IF LPAREN predicate RPAREN block
+Rule 50    else -> ELSE block
+
+Terminals, with rules where they appear
+
+ASSIGNMENT_OPERATOR  : 
+BIN_OPERATOR         : 
+BOOLEAN              : 
+DELIMITER            : 
+ID                   : 11 12 18 19 20 21 22 35 38 41 43 47
+KEYWORD              : 
+LOGICAL_OPERATOR     : 
+MATH_OPERATOR        : 
+METHOD_OF_CLASS_CONSOLE : 
+NUMBER               : 
+RESERVED             : 
+STRING               : 36
+error                : 
+
+Nonterminals, with rules where they appear
+
+DEQUELS              : 42 43 44
+DIVISION             : 22 26 30
+DOUBLE               : 27 28 29 30 33 34 40 44 46
+DOUBLE_TYPE          : 14
+ELSE                 : 50
+EQUELS               : 12 18 38 39 40
+FLOAT_TYPE           : 15
+IF                   : 49
+INTEGER              : 23 24 25 26 31 32 39 42 45
+INT_TYPE             : 13
+LBRACE               : 1
+LPAREN               : 37 48 49
+MINUS                : 20 24 28 32 34
+MORE                 : 41
+MUL                  : 21 25 29
+PLUS                 : 19 23 27
+RBRACE               : 1
+RPAREN               : 37 48 49
+SEMICOLON            : 11 12 18 37
+STATIC_CLASS_WITH_METHOD : 37
+STRING_TYPE          : 16
+WHILE                : 48
+arithmetic_expression : 12 18 19 20 21 22 23 24 25 26 27 28 29 30 37 38 39 40 41 42 43 44
+assignment           : 5
+block                : 48 49 50 0
+body                 : 1
+declaration          : 3
+declaration_with_assignment : 4
+else                 : 7
+empty                : 9
+expression           : 2 3 4 5 6 7 8 10
+function             : 8
+if                   : 6
+predicate            : 48 49
+type                 : 11 12
+while                : 10
+

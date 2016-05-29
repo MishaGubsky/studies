@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <table class="table table-hover tables">
+        <caption><h2>Provider</h2></caption>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ provider.name }}</td>
+            <td>{{ provider.address }}</td>
+            <td>{{ provider.phone }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="preview-box">
+    <form action="" method="post">
+
+        {% csrf_token %}
+        <p><label for="name">Name</label>
+
+        <p><input type="text" name="name"  value="{{provider.name}}">
+
+        <p><label for="address">Address</label>
+
+        <p><input type="text" name="address"  value="{{ provider.address }}">
+
+        <p><label for="phone">Phone</label>
+
+        <p><input type="text" name="phone"  value="{{ provider.phone }}">
+
+        <p>
+            {% if log_error %}
+                <label class="error">{{ log_error }}</label>
+            {% endif %}
+        </p>
+
+        <p></p>
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+    </div>
+{% endblock %}

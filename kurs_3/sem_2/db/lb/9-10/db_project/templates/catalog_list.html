@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+    <table class="table table-hover tables">
+        <caption><h2>Catalog of items</h2></caption>
+        <thead>
+        <tr>
+            <th>Item name</th>
+            <th>Type</th>
+            <th>Notes</th>
+            {% if request.COOKIES.priority %}
+                <th>price</th>
+                <th>count</th>
+                <th></th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in items %}
+            <tr>
+                <td>{{ i.name }}</td>
+                <td>{{ i.type }}</td>
+                <td>{{ i.notes }}</td>
+
+                {% if request.COOKIES.priority %}
+                    <td>{{ i.price }}</td>
+                    <td>{{ i.count }}</td>
+                    {% if i.catalog_id and not can_buy %}
+                        <td><a href="{% url "item_catalog_buy" pk=i.catalog_id %}">buy</a></td>
+
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+
+                {% endif %}
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% if can_buy %}
+
+        <div class="preview-box">
+            <form action="" method="post">
+                {% csrf_token %}
+                <p><label for="count">Enter Count</label>
+
+                <p><input type="text" name="count" id="count">
+
+                <p>
+                    {% if log_error %}
+                        <label class="error">{{ log_error }}</label>
+                    {% endif %}
+                </p>
+
+                <p></p>
+                <button type="submit" class="save btn btn-default">Buy</button>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}

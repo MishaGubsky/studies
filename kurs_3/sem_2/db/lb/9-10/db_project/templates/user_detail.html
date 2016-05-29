@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        {% if request.COOKIES.user_nickname != user.login %}
+
+            <table class="table table-hover tables">
+                <caption><h2>User Information</h2></caption>
+                <thead>
+                <tr>
+                    <th>Role</th>
+                    <th>Login</th>
+                    <th>Password</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{ user.role }}</td>
+                    <td>{{ user.login }}</td>
+                    <td>{{ user.password }}</td>
+
+                </tr>
+                </tbody>
+            </table>
+            {#            <button><a href="{% url "admin_user_delete" pk=user.id %}">delete</a></button>#}
+        {% else %}
+
+            <div class="preview-box">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <p><label for="old_password">Old Password </label>
+
+                    <p><input type="password" name="old_password">
+
+                    <p><label for="new_password">New password</label>
+
+                    <p><input type="password" name="new_password">
+
+                    <p><label for="confirm_password">Confirm password</label>
+
+                    <p><input type="password" name="confirm_password">
+
+                    <p>
+                        {% if login_error %}
+                            <label class="error">{{ login_error }}</label>
+                        {% endif %}
+                    </p>
+
+                    <p></p>
+                    <button type="submit" class="save btn btn-default">Save</button>
+                </form>
+            </div>
+        {% endif %}
+
+    </div>
+
+
+    {% if has_sales %}
+            <table class="table table-hover tables">
+                <caption><h2>Sales</h2></caption>
+                <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Sale date</th>
+                    <th>Item price</th>
+                    <th>Amount</th>
+                    {% if  request.COOKIES.user_nickname != user.login %}
+                        <th>Completed</th>
+                    {% endif %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in sales %}
+                    <tr>
+                        <td><a href="{% url "item_detail" pk=i.item_id %}">{{ i.item_name }}</a></td>
+                        <td>{{ i.sale_date }}</td>
+                        <td>{{ i.item_price }}</td>
+                        <td>{{ i.sale_amount }}</td>
+                        {% if  request.COOKIES.user_nickname != user.login %}
+                            {% if  i.completed %}
+                                <td><input type="checkbox" name="check_list" value="{{ i.completed }}" checked/></td>
+                            {% else %}
+                                <td><input type="checkbox" name="check_list" value="{{ i.completed }}"/></td>
+                            {% endif %}
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% if request.COOKIES.user_nickname != user.login %}
+                <div class="tab-button">
+                    <a type="submit" href="{% url "sales_update" %}" class="btn btn-primary">Save</a>
+                </div>
+            {% endif %}
+    {% else %}
+        <div>
+            <p>Not yet sales</p>
+        </div>
+    {% endif %}
+{% endblock content %}

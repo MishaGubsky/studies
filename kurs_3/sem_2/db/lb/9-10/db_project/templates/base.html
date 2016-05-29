@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="shop/static/css/shop.css"/>
+    <title>Shop</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+</head>
+<body>
+<div class="page-header">
+    <div class="myheader" style="margin-right: 20px; margin-left: 45%">
+
+        {% if request.COOKIES.user_nickname %}
+
+            <a href="/">Home</a>
+                {% if request.COOKIES.priority == '1' %}
+                    <a  href="/admin/adminPanel/" class="top-menu_log">AdminPanel</a>
+                {% endif %}
+                <a  href="/user/userPanel/" class="top-menu_log">{{ request.COOKIES.user_nickname }}</a>
+                <a  href="/accounts/logout/" class="top-menu_log">Logout</a>
+
+        {% else %}
+            <a style="text-align: left" href="/">Home</a>
+            <a href="/accounts/registration/" class="top-menu_log">Registration</a>
+            <a href="/accounts/login/" class="top-menu_log">Login</a>
+
+        {% endif %}
+    </div>
+</div>
+<div class="content container">
+    <div class="row">
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

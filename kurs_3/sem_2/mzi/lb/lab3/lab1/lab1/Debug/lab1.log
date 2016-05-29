@@ -1,0 +1,16 @@
+﻿Build started 23.04.2016 17:52:25.
+     1>Project "F:\Mzi\lab3\lab1\lab1\lab1.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Mzi\lab3\lab1\Debug\lab3.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Mzi\lab3\lab1\Debug\lab3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Mzi\lab3\lab1\Debug\lab3.lib" /MACHINE:X86 Debug\as_server.obj
+         Debug\crypto.obj
+         Debug\lab3.obj
+         Debug\server.obj
+         Debug\stdafx.obj
+         Debug\tgs_server.obj
+     1>as_server.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+         lab1.vcxproj -> F:\Mzi\lab3\lab1\Debug\lab3.exe
+     1>Done Building Project "F:\Mzi\lab3\lab1\lab1\lab1.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.99

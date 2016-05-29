@@ -1,0 +1,49 @@
+body {
+  font-family: Cambria, Georgia, "Times New Roman";
+  margin: 0;
+}
+
+DIV.main {
+  margin-left: 100px;
+  margin-right: 100px;
+  border: 3px #CCCCCC solid;
+  -webkit-border-radius: 10px;
+}
+
+DIV.content {
+  background-color: #E6E6FA;
+  align-content: center;
+}
+
+.nav-tabs li a {
+  margin-left: 70px;
+  font-size: 20px;
+  color: #3278b3;
+}
+
+.nav-tabs li a:hover {
+  background-color: #66CDAA;
+}
+
+/* Custom page footer */
+div.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+}
+
+div.footer p {
+  display: inline-block;
+}
+
+form {
+  align-content: center;
+  align-items: center;
+  margin-left: 450px;
+}
+
+.btn-succes{
+  align-items: center;
+  margin-left: 40px;
+}

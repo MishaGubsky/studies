@@ -1,0 +1,10 @@
+[Success] Daemon started
+
+[Info] Reading signals from "monitor.cfg"
+[Success] Added singal: SIGINT(2)
+[Success] Added singal: SIGQUIT(3)
+[Success] Added singal: SIGILL(4)
+[Warning] Unknown signal name: 
+[Success] Reading signals is completed
+
+[Info] Monitoring started

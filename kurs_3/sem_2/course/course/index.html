@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FTP Client</title>
+    <link rel="stylesheet" href="./css/jquery.flipster.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div class="connectionForm">
+        <label>Host</label>
+        <input type="text" name='host' id='host' class="form-control input-sm" value="localhost" />
+        <label>Port</label>
+        <input type="text" name='port' id='port' class="form-control input-sm" value="21" />
+        <label>User</label>
+        <input type="text" name='user' id='user' class="form-control input-sm" value="noxFTP" />
+        <label>Pass</label>
+        <input type="password" name='pass' id='pass' class="form-control input-sm" value="1111" />
+        <button class="btn btn-primary">Connect</button>
+    </div>
+    <div class='error'>
+        <p id='error'></p>
+    </div>
+    <div class="div-content">
+    <table id="remoteTable" class="content">
+    	<thead>
+    		<right><tr id="theader">
+    			<th id="thead-name">Name</th>
+    			<th id="thead-size">Size</th>
+    			<th id="thead-date">Date</th>
+    		</tr>
+    	</thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    </div>
+    <center>
+        <div class="buttons ">
+            <button id="createButton" class="btn btn-primary">Create Folder</button>
+            <button id="removeButton" class="btn btn-primary" disabled>Remove</button>
+            <button id="renameButton" class="btn btn-primary" disabled>Rename</button>
+            <div style="display: inline !important;">
+                <input type="file" id="fileUpload" class="filestyle btn" value="Upload" data-input="false" multiple data-buttonText='Upload files'>
+                <input type="file" id="fileDownload" nwdirectory class="filestyle btn" data-input="false" data-buttonText='Download'>
+            </div>
+        </div>
+    </center>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.flipster.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="js/bootstrap-filestyle.min.js">
+    </script>
+</body>
+
+</html>

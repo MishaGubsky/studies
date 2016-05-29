@@ -1,0 +1,15 @@
+{
+	var i=10;
+	var f=function(n, i){
+		if (n<=1){
+			return 1;
+		}
+		else{
+			return 'f';
+		}
+	}
+	f(4);
+	while (i>0 || i=='d') {
+		i--;
+	}
+}

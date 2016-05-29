@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% block content %}
+    {#    <div class="container"><h2>Example tab 2 (using standard nav-tabs)</h2></div>#}
+
+    <div id="exTab2" class="container">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#1" data-toggle="tab"><h4>Users</h4></a>
+            </li>
+            <li><a href="#2" data-toggle="tab"><h4>Providers</h4></a>
+            </li>
+            <li><a href="#3" data-toggle="tab"><h4>Items</h4></a>
+            </li>
+            <li><a href="#4" data-toggle="tab"><h4>Product in stock</h4></a>
+            </li>
+            <li><a href="#5" data-toggle="tab"><h4>Invoices and orders</h4></a>
+            </li>
+            <li><a href="#6" data-toggle="tab"><h4>Sales</h4></a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="1">
+
+                <div class="tab-content-class">
+                    <div class="tables">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Login</th>
+                                <th>Role</th>
+                                <th>Password</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in users %}
+                                <tr>
+                                    <td><a href="{% url "admin_user_detail" pk=i.id %}">{{ i.login }}</a></td>
+                                    <td>{{ i.role }}</td>
+                                    <td>{{ i.password }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+                    </div>
+{#                    <div class="tab-button">#}
+{#                        <a href="{% url "user_detail" %}" class="btn btn-primary">df</a>#}
+{#                    </div>#}
+                </div>
+            </div>
+            <div class="tab-pane" id="2">
+                <div class="tab-content-class">
+                    <div class="tables">
+                        <table class="table table-hover">
+                            <thead>
+
+                            <tr>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in providers %}
+                                <tr>
+                                    <td><a href="{% url "admin_provider_detail" pk=i.id %}">{{ i.name }}</a></td>
+                                    <td>{{ i.address }}</td>
+                                    <td>{{ i.phone }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-button">
+                        <a href="{% url "provider_new" %}" class="btn btn-primary">Add</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="3">
+                <div class="tab-content-class">
+                    <div class="tables">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Notes</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in items %}
+                                <tr>
+                                    <td>{{ i.name }}</td>
+                                    <td>{{ i.type }}</td>
+                                    <td>{{ i.notes }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-button">
+                        <a href="{% url "item_new" %}" class="btn btn-primary">Add</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="4">
+                <div class="tab-content-class">
+                    <div class="tables">
+                        <table class="table table-hover">
+                            <thead>
+
+                            <tr>
+                                <th>Item</th>
+                                <th>Provider</th>
+                                <th>Order date</th>
+                                <th>Invoice date</th>
+                                <th>QTY</th>
+                                <th>Amount delivery</th>
+                                <th>Site amount</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in sites %}
+                                <tr>
+                                    <td><a href="{% url "item_detail" pk=i.item_id %}">{{ i.item_name }}</a></td>
+                                    <td>
+                                        <a href="{% url "admin_provider_detail" pk=i.provider_id %}">{{ i.provider_name }}</a>
+                                    </td>
+
+                                    <td>{{ i.order_date }}</td>
+                                    <td>{{ i.invoice_date }}</td>
+                                    <td>{{ i.order_qty }}</td>
+                                    <td>{{ i.invoice_amount }}</td>
+                                    <td>{{ i.site_amount }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane" id="5">
+                <div class="tab-content-class">
+                    <div class="tables">
+                        <table class="table table-hover">
+                            <thead>
+
+                            <tr>
+                                <th>Item</th>
+                                <th>Provider</th>
+                                <th>Order date</th>
+                                <th>QTY</th>
+                                <th>Invoice date</th>
+                                <th>Amount delivery</th>
+                                <th>Provider price</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in invoices %}
+                                <tr>
+                                    <td><a href="{% url "item_detail" pk=i.item_id %}">{{ i.item_name }}</a></td>
+                                    <td>
+                                        <a href="{% url "admin_provider_detail" pk=i.provider_id %}">{{ i.provider_name }}</a>
+                                    </td>
+                                    <td>{{ i.order_date }}</td>
+                                    <td>{{ i.order_qty }}</td>
+                                    <td>{{ i.invoice_date }}</td>
+                                    <td>{{ i.invoice_amount }}</td>
+                                    <td>{{ i.cost_price }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-button">
+                        <a href="{% url "order_new" %}" class="btn btn-primary">Add order</a>
+                        <a href="{% url "invoice_new" %}" class="btn btn-primary">Add invoice</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="6">
+                <div class="tab-content-class">
+                    <div class="tables">
+                        <table class="table table-hover">
+                            <thead>
+
+                            <tr>
+                                <th>User</th>
+                                <th>Item</th>
+                                <th>Sale date</th>
+                                <th>Item price</th>
+                                <th>Amount</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in sales %}
+                                <tr>
+                                    <td><a href="{% url "admin_user_detail" pk=i.user_id %}">{{ i.user_login }}</a></td>
+                                    <td><a href="{% url "item_detail" pk=i.item_id %}">{{ i.item_name }}</a></td>
+                                    <td>{{ i.sale_date }}</td>
+                                    <td>{{ i.item_price }}</td>
+                                    <td>{{ i.sale_amount }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

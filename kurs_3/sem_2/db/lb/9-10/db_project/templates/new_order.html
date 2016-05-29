@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h2 style="text-align: center">New Order</h2>
+    <div class="preview-box">
+
+        <form action="" method="post" id="order">
+            {% csrf_token %}
+
+            <p><label for="item_id">Item</label>
+                <p><select name="item_id">
+                    {% for i in items %}
+                        <option value="{{ i.id }}">{{ i.name }}</option>
+                    {% endfor %}
+                </select>
+            <p><label for="provider_id">Provider</label>
+                <p><select name="provider_id">
+                    {% for i in providers %}
+                        <option value="{{ i.id }}">{{ i.name }}</option>
+                    {% endfor %}
+                </select>
+
+            <p><label for="qty">QTY</label>
+
+            <p><input type="text" name="qty">
+
+            <p>
+                {% if log_error %}
+                    <label class="error">{{ log_error }}</label>
+                {% endif %}
+            </p>
+
+            <p></p>
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+    </div>
+{% endblock %}

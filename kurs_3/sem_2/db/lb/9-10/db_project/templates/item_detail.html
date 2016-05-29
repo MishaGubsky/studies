@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <table class="table table-hover tables">
+        <caption><h2>Item</h2></caption>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Notes</th>
+        </tr>
+        <tbody>
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.type }}</td>
+            <td>{{ item.notes }}</td>
+        </tr>
+        </tbody>
+    </table>
+    {% if request.COOKIES.priority == 1 %}
+        <div class="preview-box">
+
+            <form action="" method="post">
+                {% csrf_token %}
+                <p><label for="name">Name</label>
+
+                <p><input type="text" name="name" value="{{ item.name }}">
+
+                <p><label for="type">Type</label>
+
+                <p><input type="text" name="type" value="{{ item.type }}">
+
+                <p><b>Notes</b></p>
+
+                <p><textarea name="notes">{{ item.notes }}</textarea>
+
+                <p>
+                    {% if log_error %}
+                        <label class="error">{{ log_error }}</label>
+                    {% endif %}
+                </p>
+
+                <p></p>
+                <button type="submit" class="save btn btn-default">Save</button>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}

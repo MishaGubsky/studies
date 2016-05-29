@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>ISsoft - Практика</title>
+        <link href="lab5.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3" class="header">
+                        <center><img class="logo" src="issoft_logo.png"></center>                    
+                    </td>
+                </tr>    
+
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td class="placeholder-column"></td>
+                    
+                    <td class="content-column">
+                        <center><h2>ISsoft - Практика</h2><center>
+                        <video controls class="practice-desc-video" src="video.mp4" allowfullscreen></video>
+                        
+                        <div class="divider"></div>
+                        
+                        <form enctype="multipart/form-data" name="questionary" method="POST" action="mailto:klimchuk.anuta@gmail.com">
+                                <table class="questionary">
+                                    <thead>
+                                        <tr>
+                                            <td colspan="2">
+                                                <center><h2>Анкета</h2></center>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tbody>
+                                        <tr>
+                                            <td><h4 class="caption">Фамилия:</h4></td>
+                                            <td><input size="60" type="text" name="SecondName" maxlength="50"></td>
+                                        </tr> 
+                                        <tr>
+                                            <td><h4 class="caption">Имя:</h4></td>
+                                            <td><input size="60" type="text" name="FirstName" maxlength="50"></td>
+                                        </tr>            
+                                        <tr>
+                                            <td><h4 class="caption">E-mail:</h4></td>
+                                            <td><input type="email" name="mail" size="40" maxlength="80"></td>
+                                        </tr>                                 
+                                        <tr>
+                                            <td><h4 class="caption">Телефон:</h4></td>
+                                            <td><input name="phone" size="60" type="tel" pattern="8[0-9]{10}"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><h4 class="caption">ВУЗ:</h4></td>
+                                            <td><input size="60" type="text" name="university" maxlength="200"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><h4 class="caption">Специальность:</h4></td>
+                                            <td><input size="60" type="text" maxlength="200"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><h4 class="caption">Вид практики:</h4></td>
+                                            <td>                                                
+                                                <input type="radio" name="practice" value="diplom">Преддипломная<br>
+                                                <input type="radio" name="practice" value="factory">Производственная
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td colspan="2"><h4 class="caption">Выберите дату:</h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td><h4 class="subheader">Начало</h4></td>
+                                            <td><input name="calendar" size="40" type="date" value="2016-06-01" max="2016-07-01" min="2016-02-03"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><h4 class="subheader">Окончание</h4></td>
+                                            <td><input name="calendar" size="40" type="date" value="2016-06-01" max="2016-07-01" min="2016-02-03"></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td colspan="2"><h4 class="caption">Желаемое время присутствия в офисе:</h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td><h4 class="subheader">С</h4></td>
+                                            <td><input type="time"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><h4 class="subheader">По</h4></td>
+                                            <td><input type="time"></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td colspan="2"><h4 class="caption">Оцените свои навыки в следующих областях:</h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <table class="skill-table">
+                                                    <tr>
+                                                        <td>
+                                                            <p>C#/.NET</p>
+                                                            <h4 class="subheader"><input name="dotnet" type="radio" value="A">5</h4>
+                                                            <h4 class="subheader"><input name="dotnet" type="radio" value="B">4</h4>
+                                                            <h4 class="subheader"><input name="dotnet" type="radio" value="C">3</h4>
+                                                            <h4 class="subheader"><input name="dotnet" type="radio" value="D">2</h4>
+                                                            <h4 class="subheader"><input name="dotnet" type="radio" value="F">1</h4>
+                                                        </td>
+                                                        <td>
+                                                            <p>C/C++</p>
+                                                            <h4 class="subheader"><input name="cpp" type="radio" value="A">5</h4>
+                                                            <h4 class="subheader"><input name="cpp" type="radio" value="B">4</h4>
+                                                            <h4 class="subheader"><input name="cpp" type="radio" value="C">3</h4>
+                                                            <h4 class="subheader"><input name="cpp" type="radio" value="D">2</h4>
+                                                            <h4 class="subheader"><input name="cpp" type="radio" value="F">1</h4>
+                                                        </td>
+                                                        <td>
+                                                            <p>HTML/CSS/JavaScript</p>
+                                                            <h4 class="subheader"><input name="frontend" type="radio" value="A">5</h4>
+                                                            <h4 class="subheader"><input name="frontend" type="radio" value="B">4</h4>
+                                                            <h4 class="subheader"><input name="frontend" type="radio" value="C">3</h4>
+                                                            <h4 class="subheader"><input name="frontend" type="radio" value="D">2</h4>
+                                                            <h4 class="subheader"><input name="frontend" type="radio" value="F">1</h4>
+                                                        </td>
+                                                        <td>
+                                                            <p>MySQL</p>
+                                                            <h4 class="subheader"><input name="mysql" type="radio" value="A">5</h4>
+                                                            <h4 class="subheader"><input name="mysql" type="radio" value="B">4</h4>
+                                                            <h4 class="subheader"><input name="mysql" type="radio" value="C">3</h4>
+                                                            <h4 class="subheader"><input name="mysql" type="radio" value="D">2</h4>
+                                                            <h4 class="subheader"><input name="mysql" type="radio" value="F">1</h4>
+                                                        </td>
+                                                        <td>
+                                                            <p>Python</p>
+                                                            <h4 class="subheader"><input name="python" type="radio" value="A">5</h4>
+                                                            <h4 class="subheader"><input name="python" type="radio" value="B">4</h4>
+                                                            <h4 class="subheader"><input name="python" type="radio" value="C">3</h4>
+                                                            <h4 class="subheader"><input name="python" type="radio" value="D">2</h4>
+                                                            <h4 class="subheader"><input name="python" type="radio" value="F">1</h4>
+                                                        </td>
+                                                        <td>
+                                                            <p>Ruby</p>
+                                                            <h4 class="subheader"><input name="ruby" type="radio" value="A">5</h4>
+                                                            <h4 class="subheader"><input name="ruby" type="radio" value="B">4</h4>
+                                                            <h4 class="subheader"><input name="ruby" type="radio" value="C">3</h4>
+                                                            <h4 class="subheader"><input name="ruby" type="radio" value="D">2</h4>
+                                                            <h4 class="subheader"><input name="ruby" type="radio" value="F">1</h4>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><h4 class="caption">Ваше фото:</h4></td>
+                                            <td><input type="file" name="photo"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <center><button type="submit">Отправить анкету</button>
+                                            </td>                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </form>
+                    </td>
+                    
+                    <td class="placeholder-column"></td>
+                </tr>
+            </tbody>
+            
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="footer">
+                        <center>Copyright &copy; <a href="http://www.issoft.by/">ISsoft</a> - All Rights Reserved</center>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

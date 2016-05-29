@@ -1,0 +1,1319 @@
+Created by PLY version 3.8 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> block
+Rule 1     block -> <empty>
+Rule 2     block -> LBRACKET body RBRACKET
+Rule 3     body -> expression
+Rule 4     body -> function_declaration
+Rule 5     expression -> declaration_with_assignment expression
+Rule 6     expression -> declaration_with_assignment
+Rule 7     expression -> if expression
+Rule 8     expression -> else
+Rule 9     expression -> function_body
+Rule 10    expression -> arithmetic_expression
+Rule 11    expression -> function_implementation
+Rule 12    expression -> while expression
+Rule 13    expression -> console_function
+Rule 14    expression -> console_function expression
+Rule 15    declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON
+Rule 16    declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR function_declaration
+Rule 17    arithmetic_expression -> ID MATH_OPERATOR arithmetic_expression
+Rule 18    arithmetic_expression -> ID MATH_OPERATOR SEMICOLON
+Rule 19    arithmetic_expression -> NUMBER MATH_OPERATOR arithmetic_expression
+Rule 20    arithmetic_expression -> NUMBER
+Rule 21    arithmetic_expression -> ID
+Rule 22    arithmetic_expression -> STRING
+Rule 23    function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET
+Rule 24    function_body -> expression
+Rule 25    function_body -> RETURN expression SEMICOLON
+Rule 26    function_implementation -> ID LPAREN parameters RPAREN
+Rule 27    function_implementation -> function_implementation MATH_OPERATOR function_implementation
+Rule 28    parameters -> <empty>
+Rule 29    parameters -> parameters COMMA parameters
+Rule 30    parameters -> arithmetic_expression
+Rule 31    console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON
+Rule 32    predicate -> ID LOGICAL_OPERATOR NUMBER
+Rule 33    predicate -> predicate LOGICAL_OPERATOR predicate
+Rule 34    while -> WHILE LPAREN predicate RPAREN block
+Rule 35    if -> IF LPAREN predicate RPAREN block
+Rule 36    else -> ELSE block
+
+Terminals, with rules where they appear
+
+ASSIGNMENT_OPERATOR  : 15 16
+COMMA                : 29
+ELSE                 : 36
+FUNCTION             : 23
+ID                   : 15 16 17 18 21 26 32
+IF                   : 35
+LBRACKET             : 2 23
+LOGICAL_OPERATOR     : 32 33
+LPAREN               : 23 26 31 34 35
+MATH_OPERATOR        : 17 18 19 27
+METHOD_OF_CLASS_CONSOLE : 31
+NUMBER               : 19 20 32
+RBRACKET             : 2 23
+RETURN               : 25
+RPAREN               : 23 26 31 34 35
+SEMICOLON            : 15 18 25 31
+STRING               : 22
+VAR                  : 15 16
+WHILE                : 34
+error                : 
+
+Nonterminals, with rules where they appear
+
+arithmetic_expression : 10 15 17 19 30
+block                : 34 35 36 0
+body                 : 2
+console_function     : 13 14
+declaration_with_assignment : 5 6
+else                 : 8
+expression           : 3 5 7 12 14 24 25 31
+function_body        : 9 23
+function_declaration : 4 16
+function_implementation : 11 27 27
+if                   : 7
+parameters           : 23 26 29 29
+predicate            : 33 33 34 35
+while                : 12
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . block
+    (1) block -> .
+    (2) block -> . LBRACKET body RBRACKET
+
+    $end            reduce using rule 1 (block -> .)
+    LBRACKET        shift and go to state 2
+
+    block                          shift and go to state 1
+
+state 1
+
+    (0) S' -> block .
+
+
+
+state 2
+
+    (2) block -> LBRACKET . body RBRACKET
+    (3) body -> . expression
+    (4) body -> . function_declaration
+    (5) expression -> . declaration_with_assignment expression
+    (6) expression -> . declaration_with_assignment
+    (7) expression -> . if expression
+    (8) expression -> . else
+    (9) expression -> . function_body
+    (10) expression -> . arithmetic_expression
+    (11) expression -> . function_implementation
+    (12) expression -> . while expression
+    (13) expression -> . console_function
+    (14) expression -> . console_function expression
+    (23) function_declaration -> . FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET
+    (15) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON
+    (16) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR function_declaration
+    (35) if -> . IF LPAREN predicate RPAREN block
+    (36) else -> . ELSE block
+    (24) function_body -> . expression
+    (25) function_body -> . RETURN expression SEMICOLON
+    (17) arithmetic_expression -> . ID MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> . ID MATH_OPERATOR SEMICOLON
+    (19) arithmetic_expression -> . NUMBER MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> . NUMBER
+    (21) arithmetic_expression -> . ID
+    (22) arithmetic_expression -> . STRING
+    (26) function_implementation -> . ID LPAREN parameters RPAREN
+    (27) function_implementation -> . function_implementation MATH_OPERATOR function_implementation
+    (34) while -> . WHILE LPAREN predicate RPAREN block
+    (31) console_function -> . METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON
+
+    FUNCTION        shift and go to state 5
+    VAR             shift and go to state 11
+    IF              shift and go to state 12
+    ELSE            shift and go to state 7
+    RETURN          shift and go to state 20
+    ID              shift and go to state 19
+    NUMBER          shift and go to state 21
+    STRING          shift and go to state 3
+    WHILE           shift and go to state 18
+    METHOD_OF_CLASS_CONSOLE shift and go to state 4
+
+    declaration_with_assignment    shift and go to state 13
+    while                          shift and go to state 14
+    arithmetic_expression          shift and go to state 15
+    body                           shift and go to state 16
+    expression                     shift and go to state 6
+    function_declaration           shift and go to state 17
+    function_body                  shift and go to state 8
+    function_implementation        shift and go to state 9
+    if                             shift and go to state 22
+    else                           shift and go to state 10
+    console_function               shift and go to state 23
+
+state 3
+
+    (22) arithmetic_expression -> STRING .
+
+    RPAREN          reduce using rule 22 (arithmetic_expression -> STRING .)
+    RBRACKET        reduce using rule 22 (arithmetic_expression -> STRING .)
+    SEMICOLON       reduce using rule 22 (arithmetic_expression -> STRING .)
+    COMMA           reduce using rule 22 (arithmetic_expression -> STRING .)
+
+
+state 4
+
+    (31) console_function -> METHOD_OF_CLASS_CONSOLE . LPAREN expression RPAREN SEMICOLON
+
+    LPAREN          shift and go to state 24
+
+
+state 5
+
+    (23) function_declaration -> FUNCTION . LPAREN parameters RPAREN LBRACKET function_body RBRACKET
+
+    LPAREN          shift and go to state 25
+
+
+state 6
+
+    (3) body -> expression .
+    (24) function_body -> expression .
+
+  ! reduce/reduce conflict for RBRACKET resolved using rule 3 (body -> expression .)
+    RBRACKET        reduce using rule 3 (body -> expression .)
+
+  ! RBRACKET        [ reduce using rule 24 (function_body -> expression .) ]
+
+
+state 7
+
+    (36) else -> ELSE . block
+    (1) block -> .
+    (2) block -> . LBRACKET body RBRACKET
+
+    RBRACKET        reduce using rule 1 (block -> .)
+    SEMICOLON       reduce using rule 1 (block -> .)
+    RPAREN          reduce using rule 1 (block -> .)
+    LBRACKET        shift and go to state 2
+
+    block                          shift and go to state 26
+
+state 8
+
+    (9) expression -> function_body .
+
+    RBRACKET        reduce using rule 9 (expression -> function_body .)
+    SEMICOLON       reduce using rule 9 (expression -> function_body .)
+    RPAREN          reduce using rule 9 (expression -> function_body .)
+
+
+state 9
+
+    (11) expression -> function_implementation .
+    (27) function_implementation -> function_implementation . MATH_OPERATOR function_implementation
+
+    RBRACKET        reduce using rule 11 (expression -> function_implementation .)
+    SEMICOLON       reduce using rule 11 (expression -> function_implementation .)
+    RPAREN          reduce using rule 11 (expression -> function_implementation .)
+    MATH_OPERATOR   shift and go to state 27
+
+
+state 10
+
+    (8) expression -> else .
+
+    RBRACKET        reduce using rule 8 (expression -> else .)
+    SEMICOLON       reduce using rule 8 (expression -> else .)
+    RPAREN          reduce using rule 8 (expression -> else .)
+
+
+state 11
+
+    (15) declaration_with_assignment -> VAR . ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON
+    (16) declaration_with_assignment -> VAR . ID ASSIGNMENT_OPERATOR function_declaration
+
+    ID              shift and go to state 28
+
+
+state 12
+
+    (35) if -> IF . LPAREN predicate RPAREN block
+
+    LPAREN          shift and go to state 29
+
+
+state 13
+
+    (5) expression -> declaration_with_assignment . expression
+    (6) expression -> declaration_with_assignment .
+    (5) expression -> . declaration_with_assignment expression
+    (6) expression -> . declaration_with_assignment
+    (7) expression -> . if expression
+    (8) expression -> . else
+    (9) expression -> . function_body
+    (10) expression -> . arithmetic_expression
+    (11) expression -> . function_implementation
+    (12) expression -> . while expression
+    (13) expression -> . console_function
+    (14) expression -> . console_function expression
+    (15) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON
+    (16) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR function_declaration
+    (35) if -> . IF LPAREN predicate RPAREN block
+    (36) else -> . ELSE block
+    (24) function_body -> . expression
+    (25) function_body -> . RETURN expression SEMICOLON
+    (17) arithmetic_expression -> . ID MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> . ID MATH_OPERATOR SEMICOLON
+    (19) arithmetic_expression -> . NUMBER MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> . NUMBER
+    (21) arithmetic_expression -> . ID
+    (22) arithmetic_expression -> . STRING
+    (26) function_implementation -> . ID LPAREN parameters RPAREN
+    (27) function_implementation -> . function_implementation MATH_OPERATOR function_implementation
+    (34) while -> . WHILE LPAREN predicate RPAREN block
+    (31) console_function -> . METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON
+
+    RBRACKET        reduce using rule 6 (expression -> declaration_with_assignment .)
+    SEMICOLON       reduce using rule 6 (expression -> declaration_with_assignment .)
+    RPAREN          reduce using rule 6 (expression -> declaration_with_assignment .)
+    VAR             shift and go to state 11
+    IF              shift and go to state 12
+    ELSE            shift and go to state 7
+    RETURN          shift and go to state 20
+    ID              shift and go to state 19
+    NUMBER          shift and go to state 21
+    STRING          shift and go to state 3
+    WHILE           shift and go to state 18
+    METHOD_OF_CLASS_CONSOLE shift and go to state 4
+
+    declaration_with_assignment    shift and go to state 13
+    while                          shift and go to state 14
+    arithmetic_expression          shift and go to state 15
+    expression                     shift and go to state 30
+    function_body                  shift and go to state 8
+    function_implementation        shift and go to state 9
+    if                             shift and go to state 22
+    else                           shift and go to state 10
+    console_function               shift and go to state 23
+
+state 14
+
+    (12) expression -> while . expression
+    (5) expression -> . declaration_with_assignment expression
+    (6) expression -> . declaration_with_assignment
+    (7) expression -> . if expression
+    (8) expression -> . else
+    (9) expression -> . function_body
+    (10) expression -> . arithmetic_expression
+    (11) expression -> . function_implementation
+    (12) expression -> . while expression
+    (13) expression -> . console_function
+    (14) expression -> . console_function expression
+    (15) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON
+    (16) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR function_declaration
+    (35) if -> . IF LPAREN predicate RPAREN block
+    (36) else -> . ELSE block
+    (24) function_body -> . expression
+    (25) function_body -> . RETURN expression SEMICOLON
+    (17) arithmetic_expression -> . ID MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> . ID MATH_OPERATOR SEMICOLON
+    (19) arithmetic_expression -> . NUMBER MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> . NUMBER
+    (21) arithmetic_expression -> . ID
+    (22) arithmetic_expression -> . STRING
+    (26) function_implementation -> . ID LPAREN parameters RPAREN
+    (27) function_implementation -> . function_implementation MATH_OPERATOR function_implementation
+    (34) while -> . WHILE LPAREN predicate RPAREN block
+    (31) console_function -> . METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON
+
+    VAR             shift and go to state 11
+    IF              shift and go to state 12
+    ELSE            shift and go to state 7
+    RETURN          shift and go to state 20
+    ID              shift and go to state 19
+    NUMBER          shift and go to state 21
+    STRING          shift and go to state 3
+    WHILE           shift and go to state 18
+    METHOD_OF_CLASS_CONSOLE shift and go to state 4
+
+    declaration_with_assignment    shift and go to state 13
+    while                          shift and go to state 14
+    arithmetic_expression          shift and go to state 15
+    expression                     shift and go to state 31
+    function_body                  shift and go to state 8
+    function_implementation        shift and go to state 9
+    if                             shift and go to state 22
+    else                           shift and go to state 10
+    console_function               shift and go to state 23
+
+state 15
+
+    (10) expression -> arithmetic_expression .
+
+    RBRACKET        reduce using rule 10 (expression -> arithmetic_expression .)
+    SEMICOLON       reduce using rule 10 (expression -> arithmetic_expression .)
+    RPAREN          reduce using rule 10 (expression -> arithmetic_expression .)
+
+
+state 16
+
+    (2) block -> LBRACKET body . RBRACKET
+
+    RBRACKET        shift and go to state 32
+
+
+state 17
+
+    (4) body -> function_declaration .
+
+    RBRACKET        reduce using rule 4 (body -> function_declaration .)
+
+
+state 18
+
+    (34) while -> WHILE . LPAREN predicate RPAREN block
+
+    LPAREN          shift and go to state 33
+
+
+state 19
+
+    (17) arithmetic_expression -> ID . MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> ID . MATH_OPERATOR SEMICOLON
+    (21) arithmetic_expression -> ID .
+    (26) function_implementation -> ID . LPAREN parameters RPAREN
+
+    MATH_OPERATOR   shift and go to state 34
+    RPAREN          reduce using rule 21 (arithmetic_expression -> ID .)
+    RBRACKET        reduce using rule 21 (arithmetic_expression -> ID .)
+    SEMICOLON       reduce using rule 21 (arithmetic_expression -> ID .)
+    LPAREN          shift and go to state 35
+
+
+state 20
+
+    (25) function_body -> RETURN . expression SEMICOLON
+    (5) expression -> . declaration_with_assignment expression
+    (6) expression -> . declaration_with_assignment
+    (7) expression -> . if expression
+    (8) expression -> . else
+    (9) expression -> . function_body
+    (10) expression -> . arithmetic_expression
+    (11) expression -> . function_implementation
+    (12) expression -> . while expression
+    (13) expression -> . console_function
+    (14) expression -> . console_function expression
+    (15) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON
+    (16) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR function_declaration
+    (35) if -> . IF LPAREN predicate RPAREN block
+    (36) else -> . ELSE block
+    (24) function_body -> . expression
+    (25) function_body -> . RETURN expression SEMICOLON
+    (17) arithmetic_expression -> . ID MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> . ID MATH_OPERATOR SEMICOLON
+    (19) arithmetic_expression -> . NUMBER MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> . NUMBER
+    (21) arithmetic_expression -> . ID
+    (22) arithmetic_expression -> . STRING
+    (26) function_implementation -> . ID LPAREN parameters RPAREN
+    (27) function_implementation -> . function_implementation MATH_OPERATOR function_implementation
+    (34) while -> . WHILE LPAREN predicate RPAREN block
+    (31) console_function -> . METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON
+
+    VAR             shift and go to state 11
+    IF              shift and go to state 12
+    ELSE            shift and go to state 7
+    RETURN          shift and go to state 20
+    ID              shift and go to state 19
+    NUMBER          shift and go to state 21
+    STRING          shift and go to state 3
+    WHILE           shift and go to state 18
+    METHOD_OF_CLASS_CONSOLE shift and go to state 4
+
+    declaration_with_assignment    shift and go to state 13
+    while                          shift and go to state 14
+    arithmetic_expression          shift and go to state 15
+    expression                     shift and go to state 36
+    function_body                  shift and go to state 8
+    function_implementation        shift and go to state 9
+    if                             shift and go to state 22
+    else                           shift and go to state 10
+    console_function               shift and go to state 23
+
+state 21
+
+    (19) arithmetic_expression -> NUMBER . MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> NUMBER .
+
+    MATH_OPERATOR   shift and go to state 37
+    RPAREN          reduce using rule 20 (arithmetic_expression -> NUMBER .)
+    RBRACKET        reduce using rule 20 (arithmetic_expression -> NUMBER .)
+    SEMICOLON       reduce using rule 20 (arithmetic_expression -> NUMBER .)
+    COMMA           reduce using rule 20 (arithmetic_expression -> NUMBER .)
+
+
+state 22
+
+    (7) expression -> if . expression
+    (5) expression -> . declaration_with_assignment expression
+    (6) expression -> . declaration_with_assignment
+    (7) expression -> . if expression
+    (8) expression -> . else
+    (9) expression -> . function_body
+    (10) expression -> . arithmetic_expression
+    (11) expression -> . function_implementation
+    (12) expression -> . while expression
+    (13) expression -> . console_function
+    (14) expression -> . console_function expression
+    (15) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON
+    (16) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR function_declaration
+    (35) if -> . IF LPAREN predicate RPAREN block
+    (36) else -> . ELSE block
+    (24) function_body -> . expression
+    (25) function_body -> . RETURN expression SEMICOLON
+    (17) arithmetic_expression -> . ID MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> . ID MATH_OPERATOR SEMICOLON
+    (19) arithmetic_expression -> . NUMBER MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> . NUMBER
+    (21) arithmetic_expression -> . ID
+    (22) arithmetic_expression -> . STRING
+    (26) function_implementation -> . ID LPAREN parameters RPAREN
+    (27) function_implementation -> . function_implementation MATH_OPERATOR function_implementation
+    (34) while -> . WHILE LPAREN predicate RPAREN block
+    (31) console_function -> . METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON
+
+    VAR             shift and go to state 11
+    IF              shift and go to state 12
+    ELSE            shift and go to state 7
+    RETURN          shift and go to state 20
+    ID              shift and go to state 19
+    NUMBER          shift and go to state 21
+    STRING          shift and go to state 3
+    WHILE           shift and go to state 18
+    METHOD_OF_CLASS_CONSOLE shift and go to state 4
+
+    declaration_with_assignment    shift and go to state 13
+    while                          shift and go to state 14
+    arithmetic_expression          shift and go to state 15
+    else                           shift and go to state 10
+    expression                     shift and go to state 38
+    function_body                  shift and go to state 8
+    function_implementation        shift and go to state 9
+    if                             shift and go to state 22
+    console_function               shift and go to state 23
+
+state 23
+
+    (13) expression -> console_function .
+    (14) expression -> console_function . expression
+    (5) expression -> . declaration_with_assignment expression
+    (6) expression -> . declaration_with_assignment
+    (7) expression -> . if expression
+    (8) expression -> . else
+    (9) expression -> . function_body
+    (10) expression -> . arithmetic_expression
+    (11) expression -> . function_implementation
+    (12) expression -> . while expression
+    (13) expression -> . console_function
+    (14) expression -> . console_function expression
+    (15) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON
+    (16) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR function_declaration
+    (35) if -> . IF LPAREN predicate RPAREN block
+    (36) else -> . ELSE block
+    (24) function_body -> . expression
+    (25) function_body -> . RETURN expression SEMICOLON
+    (17) arithmetic_expression -> . ID MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> . ID MATH_OPERATOR SEMICOLON
+    (19) arithmetic_expression -> . NUMBER MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> . NUMBER
+    (21) arithmetic_expression -> . ID
+    (22) arithmetic_expression -> . STRING
+    (26) function_implementation -> . ID LPAREN parameters RPAREN
+    (27) function_implementation -> . function_implementation MATH_OPERATOR function_implementation
+    (34) while -> . WHILE LPAREN predicate RPAREN block
+    (31) console_function -> . METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON
+
+    RBRACKET        reduce using rule 13 (expression -> console_function .)
+    SEMICOLON       reduce using rule 13 (expression -> console_function .)
+    RPAREN          reduce using rule 13 (expression -> console_function .)
+    VAR             shift and go to state 11
+    IF              shift and go to state 12
+    ELSE            shift and go to state 7
+    RETURN          shift and go to state 20
+    ID              shift and go to state 19
+    NUMBER          shift and go to state 21
+    STRING          shift and go to state 3
+    WHILE           shift and go to state 18
+    METHOD_OF_CLASS_CONSOLE shift and go to state 4
+
+    declaration_with_assignment    shift and go to state 13
+    while                          shift and go to state 14
+    arithmetic_expression          shift and go to state 15
+    expression                     shift and go to state 39
+    function_body                  shift and go to state 8
+    function_implementation        shift and go to state 9
+    if                             shift and go to state 22
+    else                           shift and go to state 10
+    console_function               shift and go to state 23
+
+state 24
+
+    (31) console_function -> METHOD_OF_CLASS_CONSOLE LPAREN . expression RPAREN SEMICOLON
+    (5) expression -> . declaration_with_assignment expression
+    (6) expression -> . declaration_with_assignment
+    (7) expression -> . if expression
+    (8) expression -> . else
+    (9) expression -> . function_body
+    (10) expression -> . arithmetic_expression
+    (11) expression -> . function_implementation
+    (12) expression -> . while expression
+    (13) expression -> . console_function
+    (14) expression -> . console_function expression
+    (15) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON
+    (16) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR function_declaration
+    (35) if -> . IF LPAREN predicate RPAREN block
+    (36) else -> . ELSE block
+    (24) function_body -> . expression
+    (25) function_body -> . RETURN expression SEMICOLON
+    (17) arithmetic_expression -> . ID MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> . ID MATH_OPERATOR SEMICOLON
+    (19) arithmetic_expression -> . NUMBER MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> . NUMBER
+    (21) arithmetic_expression -> . ID
+    (22) arithmetic_expression -> . STRING
+    (26) function_implementation -> . ID LPAREN parameters RPAREN
+    (27) function_implementation -> . function_implementation MATH_OPERATOR function_implementation
+    (34) while -> . WHILE LPAREN predicate RPAREN block
+    (31) console_function -> . METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON
+
+    VAR             shift and go to state 11
+    IF              shift and go to state 12
+    ELSE            shift and go to state 7
+    RETURN          shift and go to state 20
+    ID              shift and go to state 19
+    NUMBER          shift and go to state 21
+    STRING          shift and go to state 3
+    WHILE           shift and go to state 18
+    METHOD_OF_CLASS_CONSOLE shift and go to state 4
+
+    declaration_with_assignment    shift and go to state 13
+    while                          shift and go to state 14
+    arithmetic_expression          shift and go to state 15
+    expression                     shift and go to state 40
+    function_body                  shift and go to state 8
+    function_implementation        shift and go to state 9
+    if                             shift and go to state 22
+    else                           shift and go to state 10
+    console_function               shift and go to state 23
+
+state 25
+
+    (23) function_declaration -> FUNCTION LPAREN . parameters RPAREN LBRACKET function_body RBRACKET
+    (28) parameters -> .
+    (29) parameters -> . parameters COMMA parameters
+    (30) parameters -> . arithmetic_expression
+    (17) arithmetic_expression -> . ID MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> . ID MATH_OPERATOR SEMICOLON
+    (19) arithmetic_expression -> . NUMBER MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> . NUMBER
+    (21) arithmetic_expression -> . ID
+    (22) arithmetic_expression -> . STRING
+
+    RPAREN          reduce using rule 28 (parameters -> .)
+    COMMA           reduce using rule 28 (parameters -> .)
+    ID              shift and go to state 43
+    NUMBER          shift and go to state 21
+    STRING          shift and go to state 3
+
+    parameters                     shift and go to state 41
+    arithmetic_expression          shift and go to state 42
+
+state 26
+
+    (36) else -> ELSE block .
+
+    RBRACKET        reduce using rule 36 (else -> ELSE block .)
+    SEMICOLON       reduce using rule 36 (else -> ELSE block .)
+    RPAREN          reduce using rule 36 (else -> ELSE block .)
+
+
+state 27
+
+    (27) function_implementation -> function_implementation MATH_OPERATOR . function_implementation
+    (26) function_implementation -> . ID LPAREN parameters RPAREN
+    (27) function_implementation -> . function_implementation MATH_OPERATOR function_implementation
+
+    ID              shift and go to state 45
+
+    function_implementation        shift and go to state 44
+
+state 28
+
+    (15) declaration_with_assignment -> VAR ID . ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON
+    (16) declaration_with_assignment -> VAR ID . ASSIGNMENT_OPERATOR function_declaration
+
+    ASSIGNMENT_OPERATOR shift and go to state 46
+
+
+state 29
+
+    (35) if -> IF LPAREN . predicate RPAREN block
+    (32) predicate -> . ID LOGICAL_OPERATOR NUMBER
+    (33) predicate -> . predicate LOGICAL_OPERATOR predicate
+
+    ID              shift and go to state 47
+
+    predicate                      shift and go to state 48
+
+state 30
+
+    (5) expression -> declaration_with_assignment expression .
+    (24) function_body -> expression .
+
+  ! reduce/reduce conflict for RBRACKET resolved using rule 5 (expression -> declaration_with_assignment expression .)
+  ! reduce/reduce conflict for SEMICOLON resolved using rule 5 (expression -> declaration_with_assignment expression .)
+  ! reduce/reduce conflict for RPAREN resolved using rule 5 (expression -> declaration_with_assignment expression .)
+    RBRACKET        reduce using rule 5 (expression -> declaration_with_assignment expression .)
+    SEMICOLON       reduce using rule 5 (expression -> declaration_with_assignment expression .)
+    RPAREN          reduce using rule 5 (expression -> declaration_with_assignment expression .)
+
+  ! RBRACKET        [ reduce using rule 24 (function_body -> expression .) ]
+  ! SEMICOLON       [ reduce using rule 24 (function_body -> expression .) ]
+  ! RPAREN          [ reduce using rule 24 (function_body -> expression .) ]
+
+
+state 31
+
+    (12) expression -> while expression .
+    (24) function_body -> expression .
+
+  ! reduce/reduce conflict for RBRACKET resolved using rule 12 (expression -> while expression .)
+  ! reduce/reduce conflict for SEMICOLON resolved using rule 12 (expression -> while expression .)
+  ! reduce/reduce conflict for RPAREN resolved using rule 12 (expression -> while expression .)
+    RBRACKET        reduce using rule 12 (expression -> while expression .)
+    SEMICOLON       reduce using rule 12 (expression -> while expression .)
+    RPAREN          reduce using rule 12 (expression -> while expression .)
+
+  ! RBRACKET        [ reduce using rule 24 (function_body -> expression .) ]
+  ! SEMICOLON       [ reduce using rule 24 (function_body -> expression .) ]
+  ! RPAREN          [ reduce using rule 24 (function_body -> expression .) ]
+
+
+state 32
+
+    (2) block -> LBRACKET body RBRACKET .
+
+    $end            reduce using rule 2 (block -> LBRACKET body RBRACKET .)
+    VAR             reduce using rule 2 (block -> LBRACKET body RBRACKET .)
+    IF              reduce using rule 2 (block -> LBRACKET body RBRACKET .)
+    ELSE            reduce using rule 2 (block -> LBRACKET body RBRACKET .)
+    RETURN          reduce using rule 2 (block -> LBRACKET body RBRACKET .)
+    ID              reduce using rule 2 (block -> LBRACKET body RBRACKET .)
+    NUMBER          reduce using rule 2 (block -> LBRACKET body RBRACKET .)
+    STRING          reduce using rule 2 (block -> LBRACKET body RBRACKET .)
+    WHILE           reduce using rule 2 (block -> LBRACKET body RBRACKET .)
+    METHOD_OF_CLASS_CONSOLE reduce using rule 2 (block -> LBRACKET body RBRACKET .)
+    RBRACKET        reduce using rule 2 (block -> LBRACKET body RBRACKET .)
+    SEMICOLON       reduce using rule 2 (block -> LBRACKET body RBRACKET .)
+    RPAREN          reduce using rule 2 (block -> LBRACKET body RBRACKET .)
+
+
+state 33
+
+    (34) while -> WHILE LPAREN . predicate RPAREN block
+    (32) predicate -> . ID LOGICAL_OPERATOR NUMBER
+    (33) predicate -> . predicate LOGICAL_OPERATOR predicate
+
+    ID              shift and go to state 47
+
+    predicate                      shift and go to state 49
+
+state 34
+
+    (17) arithmetic_expression -> ID MATH_OPERATOR . arithmetic_expression
+    (18) arithmetic_expression -> ID MATH_OPERATOR . SEMICOLON
+    (17) arithmetic_expression -> . ID MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> . ID MATH_OPERATOR SEMICOLON
+    (19) arithmetic_expression -> . NUMBER MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> . NUMBER
+    (21) arithmetic_expression -> . ID
+    (22) arithmetic_expression -> . STRING
+
+    SEMICOLON       shift and go to state 50
+    ID              shift and go to state 43
+    NUMBER          shift and go to state 21
+    STRING          shift and go to state 3
+
+    arithmetic_expression          shift and go to state 51
+
+state 35
+
+    (26) function_implementation -> ID LPAREN . parameters RPAREN
+    (28) parameters -> .
+    (29) parameters -> . parameters COMMA parameters
+    (30) parameters -> . arithmetic_expression
+    (17) arithmetic_expression -> . ID MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> . ID MATH_OPERATOR SEMICOLON
+    (19) arithmetic_expression -> . NUMBER MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> . NUMBER
+    (21) arithmetic_expression -> . ID
+    (22) arithmetic_expression -> . STRING
+
+    RPAREN          reduce using rule 28 (parameters -> .)
+    COMMA           reduce using rule 28 (parameters -> .)
+    ID              shift and go to state 43
+    NUMBER          shift and go to state 21
+    STRING          shift and go to state 3
+
+    parameters                     shift and go to state 52
+    arithmetic_expression          shift and go to state 42
+
+state 36
+
+    (25) function_body -> RETURN expression . SEMICOLON
+    (24) function_body -> expression .
+
+  ! shift/reduce conflict for SEMICOLON resolved as shift
+    SEMICOLON       shift and go to state 53
+
+  ! SEMICOLON       [ reduce using rule 24 (function_body -> expression .) ]
+
+
+state 37
+
+    (19) arithmetic_expression -> NUMBER MATH_OPERATOR . arithmetic_expression
+    (17) arithmetic_expression -> . ID MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> . ID MATH_OPERATOR SEMICOLON
+    (19) arithmetic_expression -> . NUMBER MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> . NUMBER
+    (21) arithmetic_expression -> . ID
+    (22) arithmetic_expression -> . STRING
+
+    ID              shift and go to state 43
+    NUMBER          shift and go to state 21
+    STRING          shift and go to state 3
+
+    arithmetic_expression          shift and go to state 54
+
+state 38
+
+    (7) expression -> if expression .
+    (24) function_body -> expression .
+
+  ! reduce/reduce conflict for RBRACKET resolved using rule 7 (expression -> if expression .)
+  ! reduce/reduce conflict for SEMICOLON resolved using rule 7 (expression -> if expression .)
+  ! reduce/reduce conflict for RPAREN resolved using rule 7 (expression -> if expression .)
+    RBRACKET        reduce using rule 7 (expression -> if expression .)
+    SEMICOLON       reduce using rule 7 (expression -> if expression .)
+    RPAREN          reduce using rule 7 (expression -> if expression .)
+
+  ! RBRACKET        [ reduce using rule 24 (function_body -> expression .) ]
+  ! SEMICOLON       [ reduce using rule 24 (function_body -> expression .) ]
+  ! RPAREN          [ reduce using rule 24 (function_body -> expression .) ]
+
+
+state 39
+
+    (14) expression -> console_function expression .
+    (24) function_body -> expression .
+
+  ! reduce/reduce conflict for RBRACKET resolved using rule 14 (expression -> console_function expression .)
+  ! reduce/reduce conflict for SEMICOLON resolved using rule 14 (expression -> console_function expression .)
+  ! reduce/reduce conflict for RPAREN resolved using rule 14 (expression -> console_function expression .)
+    RBRACKET        reduce using rule 14 (expression -> console_function expression .)
+    SEMICOLON       reduce using rule 14 (expression -> console_function expression .)
+    RPAREN          reduce using rule 14 (expression -> console_function expression .)
+
+  ! RBRACKET        [ reduce using rule 24 (function_body -> expression .) ]
+  ! SEMICOLON       [ reduce using rule 24 (function_body -> expression .) ]
+  ! RPAREN          [ reduce using rule 24 (function_body -> expression .) ]
+
+
+state 40
+
+    (31) console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression . RPAREN SEMICOLON
+    (24) function_body -> expression .
+
+  ! shift/reduce conflict for RPAREN resolved as shift
+    RPAREN          shift and go to state 55
+
+  ! RPAREN          [ reduce using rule 24 (function_body -> expression .) ]
+
+
+state 41
+
+    (23) function_declaration -> FUNCTION LPAREN parameters . RPAREN LBRACKET function_body RBRACKET
+    (29) parameters -> parameters . COMMA parameters
+
+    RPAREN          shift and go to state 57
+    COMMA           shift and go to state 56
+
+
+state 42
+
+    (30) parameters -> arithmetic_expression .
+
+    RPAREN          reduce using rule 30 (parameters -> arithmetic_expression .)
+    COMMA           reduce using rule 30 (parameters -> arithmetic_expression .)
+
+
+state 43
+
+    (17) arithmetic_expression -> ID . MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> ID . MATH_OPERATOR SEMICOLON
+    (21) arithmetic_expression -> ID .
+
+    MATH_OPERATOR   shift and go to state 34
+    SEMICOLON       reduce using rule 21 (arithmetic_expression -> ID .)
+    COMMA           reduce using rule 21 (arithmetic_expression -> ID .)
+    RPAREN          reduce using rule 21 (arithmetic_expression -> ID .)
+    RBRACKET        reduce using rule 21 (arithmetic_expression -> ID .)
+
+
+state 44
+
+    (27) function_implementation -> function_implementation MATH_OPERATOR function_implementation .
+    (27) function_implementation -> function_implementation . MATH_OPERATOR function_implementation
+
+  ! shift/reduce conflict for MATH_OPERATOR resolved as shift
+    RBRACKET        reduce using rule 27 (function_implementation -> function_implementation MATH_OPERATOR function_implementation .)
+    SEMICOLON       reduce using rule 27 (function_implementation -> function_implementation MATH_OPERATOR function_implementation .)
+    RPAREN          reduce using rule 27 (function_implementation -> function_implementation MATH_OPERATOR function_implementation .)
+    MATH_OPERATOR   shift and go to state 27
+
+  ! MATH_OPERATOR   [ reduce using rule 27 (function_implementation -> function_implementation MATH_OPERATOR function_implementation .) ]
+
+
+state 45
+
+    (26) function_implementation -> ID . LPAREN parameters RPAREN
+
+    LPAREN          shift and go to state 35
+
+
+state 46
+
+    (15) declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR . arithmetic_expression SEMICOLON
+    (16) declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR . function_declaration
+    (17) arithmetic_expression -> . ID MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> . ID MATH_OPERATOR SEMICOLON
+    (19) arithmetic_expression -> . NUMBER MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> . NUMBER
+    (21) arithmetic_expression -> . ID
+    (22) arithmetic_expression -> . STRING
+    (23) function_declaration -> . FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET
+
+    ID              shift and go to state 43
+    NUMBER          shift and go to state 21
+    STRING          shift and go to state 3
+    FUNCTION        shift and go to state 5
+
+    arithmetic_expression          shift and go to state 59
+    function_declaration           shift and go to state 58
+
+state 47
+
+    (32) predicate -> ID . LOGICAL_OPERATOR NUMBER
+
+    LOGICAL_OPERATOR shift and go to state 60
+
+
+state 48
+
+    (35) if -> IF LPAREN predicate . RPAREN block
+    (33) predicate -> predicate . LOGICAL_OPERATOR predicate
+
+    RPAREN          shift and go to state 61
+    LOGICAL_OPERATOR shift and go to state 62
+
+
+state 49
+
+    (34) while -> WHILE LPAREN predicate . RPAREN block
+    (33) predicate -> predicate . LOGICAL_OPERATOR predicate
+
+    RPAREN          shift and go to state 63
+    LOGICAL_OPERATOR shift and go to state 62
+
+
+state 50
+
+    (18) arithmetic_expression -> ID MATH_OPERATOR SEMICOLON .
+
+    RPAREN          reduce using rule 18 (arithmetic_expression -> ID MATH_OPERATOR SEMICOLON .)
+    RBRACKET        reduce using rule 18 (arithmetic_expression -> ID MATH_OPERATOR SEMICOLON .)
+    SEMICOLON       reduce using rule 18 (arithmetic_expression -> ID MATH_OPERATOR SEMICOLON .)
+    COMMA           reduce using rule 18 (arithmetic_expression -> ID MATH_OPERATOR SEMICOLON .)
+
+
+state 51
+
+    (17) arithmetic_expression -> ID MATH_OPERATOR arithmetic_expression .
+
+    RPAREN          reduce using rule 17 (arithmetic_expression -> ID MATH_OPERATOR arithmetic_expression .)
+    RBRACKET        reduce using rule 17 (arithmetic_expression -> ID MATH_OPERATOR arithmetic_expression .)
+    SEMICOLON       reduce using rule 17 (arithmetic_expression -> ID MATH_OPERATOR arithmetic_expression .)
+    COMMA           reduce using rule 17 (arithmetic_expression -> ID MATH_OPERATOR arithmetic_expression .)
+
+
+state 52
+
+    (26) function_implementation -> ID LPAREN parameters . RPAREN
+    (29) parameters -> parameters . COMMA parameters
+
+    RPAREN          shift and go to state 64
+    COMMA           shift and go to state 56
+
+
+state 53
+
+    (25) function_body -> RETURN expression SEMICOLON .
+
+    RBRACKET        reduce using rule 25 (function_body -> RETURN expression SEMICOLON .)
+    RPAREN          reduce using rule 25 (function_body -> RETURN expression SEMICOLON .)
+    SEMICOLON       reduce using rule 25 (function_body -> RETURN expression SEMICOLON .)
+
+
+state 54
+
+    (19) arithmetic_expression -> NUMBER MATH_OPERATOR arithmetic_expression .
+
+    RPAREN          reduce using rule 19 (arithmetic_expression -> NUMBER MATH_OPERATOR arithmetic_expression .)
+    RBRACKET        reduce using rule 19 (arithmetic_expression -> NUMBER MATH_OPERATOR arithmetic_expression .)
+    SEMICOLON       reduce using rule 19 (arithmetic_expression -> NUMBER MATH_OPERATOR arithmetic_expression .)
+    COMMA           reduce using rule 19 (arithmetic_expression -> NUMBER MATH_OPERATOR arithmetic_expression .)
+
+
+state 55
+
+    (31) console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN . SEMICOLON
+
+    SEMICOLON       shift and go to state 65
+
+
+state 56
+
+    (29) parameters -> parameters COMMA . parameters
+    (28) parameters -> .
+    (29) parameters -> . parameters COMMA parameters
+    (30) parameters -> . arithmetic_expression
+    (17) arithmetic_expression -> . ID MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> . ID MATH_OPERATOR SEMICOLON
+    (19) arithmetic_expression -> . NUMBER MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> . NUMBER
+    (21) arithmetic_expression -> . ID
+    (22) arithmetic_expression -> . STRING
+
+    COMMA           reduce using rule 28 (parameters -> .)
+    RPAREN          reduce using rule 28 (parameters -> .)
+    ID              shift and go to state 43
+    NUMBER          shift and go to state 21
+    STRING          shift and go to state 3
+
+    parameters                     shift and go to state 66
+    arithmetic_expression          shift and go to state 42
+
+state 57
+
+    (23) function_declaration -> FUNCTION LPAREN parameters RPAREN . LBRACKET function_body RBRACKET
+
+    LBRACKET        shift and go to state 67
+
+
+state 58
+
+    (16) declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR function_declaration .
+
+    VAR             reduce using rule 16 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR function_declaration .)
+    IF              reduce using rule 16 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR function_declaration .)
+    ELSE            reduce using rule 16 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR function_declaration .)
+    RETURN          reduce using rule 16 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR function_declaration .)
+    ID              reduce using rule 16 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR function_declaration .)
+    NUMBER          reduce using rule 16 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR function_declaration .)
+    STRING          reduce using rule 16 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR function_declaration .)
+    WHILE           reduce using rule 16 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR function_declaration .)
+    METHOD_OF_CLASS_CONSOLE reduce using rule 16 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR function_declaration .)
+    RBRACKET        reduce using rule 16 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR function_declaration .)
+    SEMICOLON       reduce using rule 16 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR function_declaration .)
+    RPAREN          reduce using rule 16 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR function_declaration .)
+
+
+state 59
+
+    (15) declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression . SEMICOLON
+
+    SEMICOLON       shift and go to state 68
+
+
+state 60
+
+    (32) predicate -> ID LOGICAL_OPERATOR . NUMBER
+
+    NUMBER          shift and go to state 69
+
+
+state 61
+
+    (35) if -> IF LPAREN predicate RPAREN . block
+    (1) block -> .
+    (2) block -> . LBRACKET body RBRACKET
+
+    VAR             reduce using rule 1 (block -> .)
+    IF              reduce using rule 1 (block -> .)
+    ELSE            reduce using rule 1 (block -> .)
+    RETURN          reduce using rule 1 (block -> .)
+    ID              reduce using rule 1 (block -> .)
+    NUMBER          reduce using rule 1 (block -> .)
+    STRING          reduce using rule 1 (block -> .)
+    WHILE           reduce using rule 1 (block -> .)
+    METHOD_OF_CLASS_CONSOLE reduce using rule 1 (block -> .)
+    LBRACKET        shift and go to state 2
+
+    block                          shift and go to state 70
+
+state 62
+
+    (33) predicate -> predicate LOGICAL_OPERATOR . predicate
+    (32) predicate -> . ID LOGICAL_OPERATOR NUMBER
+    (33) predicate -> . predicate LOGICAL_OPERATOR predicate
+
+    ID              shift and go to state 47
+
+    predicate                      shift and go to state 71
+
+state 63
+
+    (34) while -> WHILE LPAREN predicate RPAREN . block
+    (1) block -> .
+    (2) block -> . LBRACKET body RBRACKET
+
+    VAR             reduce using rule 1 (block -> .)
+    IF              reduce using rule 1 (block -> .)
+    ELSE            reduce using rule 1 (block -> .)
+    RETURN          reduce using rule 1 (block -> .)
+    ID              reduce using rule 1 (block -> .)
+    NUMBER          reduce using rule 1 (block -> .)
+    STRING          reduce using rule 1 (block -> .)
+    WHILE           reduce using rule 1 (block -> .)
+    METHOD_OF_CLASS_CONSOLE reduce using rule 1 (block -> .)
+    LBRACKET        shift and go to state 2
+
+    block                          shift and go to state 72
+
+state 64
+
+    (26) function_implementation -> ID LPAREN parameters RPAREN .
+
+    MATH_OPERATOR   reduce using rule 26 (function_implementation -> ID LPAREN parameters RPAREN .)
+    RBRACKET        reduce using rule 26 (function_implementation -> ID LPAREN parameters RPAREN .)
+    SEMICOLON       reduce using rule 26 (function_implementation -> ID LPAREN parameters RPAREN .)
+    RPAREN          reduce using rule 26 (function_implementation -> ID LPAREN parameters RPAREN .)
+
+
+state 65
+
+    (31) console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON .
+
+    VAR             reduce using rule 31 (console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON .)
+    IF              reduce using rule 31 (console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON .)
+    ELSE            reduce using rule 31 (console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON .)
+    RETURN          reduce using rule 31 (console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON .)
+    ID              reduce using rule 31 (console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON .)
+    NUMBER          reduce using rule 31 (console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON .)
+    STRING          reduce using rule 31 (console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON .)
+    WHILE           reduce using rule 31 (console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON .)
+    METHOD_OF_CLASS_CONSOLE reduce using rule 31 (console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON .)
+    RBRACKET        reduce using rule 31 (console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON .)
+    SEMICOLON       reduce using rule 31 (console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON .)
+    RPAREN          reduce using rule 31 (console_function -> METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON .)
+
+
+state 66
+
+    (29) parameters -> parameters COMMA parameters .
+    (29) parameters -> parameters . COMMA parameters
+
+  ! shift/reduce conflict for COMMA resolved as shift
+    RPAREN          reduce using rule 29 (parameters -> parameters COMMA parameters .)
+    COMMA           shift and go to state 56
+
+  ! COMMA           [ reduce using rule 29 (parameters -> parameters COMMA parameters .) ]
+
+
+state 67
+
+    (23) function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET . function_body RBRACKET
+    (24) function_body -> . expression
+    (25) function_body -> . RETURN expression SEMICOLON
+    (5) expression -> . declaration_with_assignment expression
+    (6) expression -> . declaration_with_assignment
+    (7) expression -> . if expression
+    (8) expression -> . else
+    (9) expression -> . function_body
+    (10) expression -> . arithmetic_expression
+    (11) expression -> . function_implementation
+    (12) expression -> . while expression
+    (13) expression -> . console_function
+    (14) expression -> . console_function expression
+    (15) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON
+    (16) declaration_with_assignment -> . VAR ID ASSIGNMENT_OPERATOR function_declaration
+    (35) if -> . IF LPAREN predicate RPAREN block
+    (36) else -> . ELSE block
+    (17) arithmetic_expression -> . ID MATH_OPERATOR arithmetic_expression
+    (18) arithmetic_expression -> . ID MATH_OPERATOR SEMICOLON
+    (19) arithmetic_expression -> . NUMBER MATH_OPERATOR arithmetic_expression
+    (20) arithmetic_expression -> . NUMBER
+    (21) arithmetic_expression -> . ID
+    (22) arithmetic_expression -> . STRING
+    (26) function_implementation -> . ID LPAREN parameters RPAREN
+    (27) function_implementation -> . function_implementation MATH_OPERATOR function_implementation
+    (34) while -> . WHILE LPAREN predicate RPAREN block
+    (31) console_function -> . METHOD_OF_CLASS_CONSOLE LPAREN expression RPAREN SEMICOLON
+
+    RETURN          shift and go to state 20
+    VAR             shift and go to state 11
+    IF              shift and go to state 12
+    ELSE            shift and go to state 7
+    ID              shift and go to state 19
+    NUMBER          shift and go to state 21
+    STRING          shift and go to state 3
+    WHILE           shift and go to state 18
+    METHOD_OF_CLASS_CONSOLE shift and go to state 4
+
+    declaration_with_assignment    shift and go to state 13
+    while                          shift and go to state 14
+    arithmetic_expression          shift and go to state 15
+    expression                     shift and go to state 73
+    function_body                  shift and go to state 74
+    function_implementation        shift and go to state 9
+    if                             shift and go to state 22
+    else                           shift and go to state 10
+    console_function               shift and go to state 23
+
+state 68
+
+    (15) declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON .
+
+    VAR             reduce using rule 15 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON .)
+    IF              reduce using rule 15 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON .)
+    ELSE            reduce using rule 15 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON .)
+    RETURN          reduce using rule 15 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON .)
+    ID              reduce using rule 15 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON .)
+    NUMBER          reduce using rule 15 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON .)
+    STRING          reduce using rule 15 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON .)
+    WHILE           reduce using rule 15 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON .)
+    METHOD_OF_CLASS_CONSOLE reduce using rule 15 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON .)
+    RBRACKET        reduce using rule 15 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON .)
+    SEMICOLON       reduce using rule 15 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON .)
+    RPAREN          reduce using rule 15 (declaration_with_assignment -> VAR ID ASSIGNMENT_OPERATOR arithmetic_expression SEMICOLON .)
+
+
+state 69
+
+    (32) predicate -> ID LOGICAL_OPERATOR NUMBER .
+
+    LOGICAL_OPERATOR reduce using rule 32 (predicate -> ID LOGICAL_OPERATOR NUMBER .)
+    RPAREN          reduce using rule 32 (predicate -> ID LOGICAL_OPERATOR NUMBER .)
+
+
+state 70
+
+    (35) if -> IF LPAREN predicate RPAREN block .
+
+    VAR             reduce using rule 35 (if -> IF LPAREN predicate RPAREN block .)
+    IF              reduce using rule 35 (if -> IF LPAREN predicate RPAREN block .)
+    ELSE            reduce using rule 35 (if -> IF LPAREN predicate RPAREN block .)
+    RETURN          reduce using rule 35 (if -> IF LPAREN predicate RPAREN block .)
+    ID              reduce using rule 35 (if -> IF LPAREN predicate RPAREN block .)
+    NUMBER          reduce using rule 35 (if -> IF LPAREN predicate RPAREN block .)
+    STRING          reduce using rule 35 (if -> IF LPAREN predicate RPAREN block .)
+    WHILE           reduce using rule 35 (if -> IF LPAREN predicate RPAREN block .)
+    METHOD_OF_CLASS_CONSOLE reduce using rule 35 (if -> IF LPAREN predicate RPAREN block .)
+
+
+state 71
+
+    (33) predicate -> predicate LOGICAL_OPERATOR predicate .
+    (33) predicate -> predicate . LOGICAL_OPERATOR predicate
+
+  ! shift/reduce conflict for LOGICAL_OPERATOR resolved as shift
+    RPAREN          reduce using rule 33 (predicate -> predicate LOGICAL_OPERATOR predicate .)
+    LOGICAL_OPERATOR shift and go to state 62
+
+  ! LOGICAL_OPERATOR [ reduce using rule 33 (predicate -> predicate LOGICAL_OPERATOR predicate .) ]
+
+
+state 72
+
+    (34) while -> WHILE LPAREN predicate RPAREN block .
+
+    VAR             reduce using rule 34 (while -> WHILE LPAREN predicate RPAREN block .)
+    IF              reduce using rule 34 (while -> WHILE LPAREN predicate RPAREN block .)
+    ELSE            reduce using rule 34 (while -> WHILE LPAREN predicate RPAREN block .)
+    RETURN          reduce using rule 34 (while -> WHILE LPAREN predicate RPAREN block .)
+    ID              reduce using rule 34 (while -> WHILE LPAREN predicate RPAREN block .)
+    NUMBER          reduce using rule 34 (while -> WHILE LPAREN predicate RPAREN block .)
+    STRING          reduce using rule 34 (while -> WHILE LPAREN predicate RPAREN block .)
+    WHILE           reduce using rule 34 (while -> WHILE LPAREN predicate RPAREN block .)
+    METHOD_OF_CLASS_CONSOLE reduce using rule 34 (while -> WHILE LPAREN predicate RPAREN block .)
+
+
+state 73
+
+    (24) function_body -> expression .
+
+    RBRACKET        reduce using rule 24 (function_body -> expression .)
+
+
+state 74
+
+    (23) function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body . RBRACKET
+    (9) expression -> function_body .
+
+  ! shift/reduce conflict for RBRACKET resolved as shift
+    RBRACKET        shift and go to state 75
+
+  ! RBRACKET        [ reduce using rule 9 (expression -> function_body .) ]
+
+
+state 75
+
+    (23) function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET .
+
+    RBRACKET        reduce using rule 23 (function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET .)
+    VAR             reduce using rule 23 (function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET .)
+    IF              reduce using rule 23 (function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET .)
+    ELSE            reduce using rule 23 (function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET .)
+    RETURN          reduce using rule 23 (function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET .)
+    ID              reduce using rule 23 (function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET .)
+    NUMBER          reduce using rule 23 (function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET .)
+    STRING          reduce using rule 23 (function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET .)
+    WHILE           reduce using rule 23 (function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET .)
+    METHOD_OF_CLASS_CONSOLE reduce using rule 23 (function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET .)
+    SEMICOLON       reduce using rule 23 (function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET .)
+    RPAREN          reduce using rule 23 (function_declaration -> FUNCTION LPAREN parameters RPAREN LBRACKET function_body RBRACKET .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for SEMICOLON in state 36 resolved as shift
+WARNING: shift/reduce conflict for RPAREN in state 40 resolved as shift
+WARNING: shift/reduce conflict for MATH_OPERATOR in state 44 resolved as shift
+WARNING: shift/reduce conflict for COMMA in state 66 resolved as shift
+WARNING: shift/reduce conflict for LOGICAL_OPERATOR in state 71 resolved as shift
+WARNING: shift/reduce conflict for RBRACKET in state 74 resolved as shift
+WARNING: reduce/reduce conflict in state 6 resolved using rule (body -> expression)
+WARNING: rejected rule (function_body -> expression) in state 6
+WARNING: reduce/reduce conflict in state 30 resolved using rule (expression -> declaration_with_assignment expression)
+WARNING: rejected rule (function_body -> expression) in state 30
+WARNING: reduce/reduce conflict in state 31 resolved using rule (expression -> while expression)
+WARNING: rejected rule (function_body -> expression) in state 31
+WARNING: reduce/reduce conflict in state 38 resolved using rule (expression -> if expression)
+WARNING: rejected rule (function_body -> expression) in state 38
+WARNING: reduce/reduce conflict in state 39 resolved using rule (expression -> console_function expression)
+WARNING: rejected rule (function_body -> expression) in state 39

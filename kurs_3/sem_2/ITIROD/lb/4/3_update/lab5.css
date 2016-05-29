@@ -1,0 +1,50 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #A0F0F0;
+}
+
+h4.subheader {
+    color: #ecf0f1;
+}
+
+img.logo {
+    margin: 20px;
+}
+
+td.nav-bar {
+    text-align: left;
+}
+
+.practice-desc-video {
+    width: 500px;
+    height: 280px;
+    margin-bottom: 10px;
+}
+
+.caption {
+    font-weight: bold;
+}
+
+table {
+	margin: 0 auto;
+	width: 60%;
+	background-color: #F0F0A0;
+	border: 2px solid #9400D3;
+	border-radius: 5px;
+}
+
+table.questionary {
+	border: 2px solid #9400D3;
+    margin: auto;
+    background-color: #9370DB;
+}
+
+table.skill-table td {
+    width: 95px;
+    background-color: #9370DB;
+}
+
+h4 {
+	text-align: center;
+}

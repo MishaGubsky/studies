@@ -1,0 +1,28 @@
+h4.subheader {
+    color: grey;
+}
+
+img.logo {
+    margin: 20px;
+}
+
+td.nav-bar {
+    text-align: left;
+}
+
+.practice-desc-video {
+    width: 500px;
+    height: 280px;
+}
+
+.caption {
+    font-weight: bold;
+}
+
+table.questionary {
+    margin: auto;
+}
+
+table.skill-table td {
+    width: 95px;
+}

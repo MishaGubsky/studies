@@ -1,0 +1,1 @@
+grant select on salesTable to auth_user

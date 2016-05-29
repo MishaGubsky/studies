@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 style="text-align: center">Registration</h1>
+
+    <div class="preview-box">
+        <form action="" method="post">
+            {% csrf_token %}
+            <p><label for="login">Login </label>
+
+            <p><input type="text" name="login" id="login">
+
+            <p><label for="password">Password </label>
+
+            <p><input type="password" name="password" id="password">
+                {% if login_error %}
+                    <label class="error">{{ login_error }}</label>
+                {% endif %}
+
+            <p></p>
+            <button type="submit" class="save btn btn-default">Sign up</button>
+        </form>
+    </div>
+{% endblock content %}

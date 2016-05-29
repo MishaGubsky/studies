@@ -10,4 +10,5 @@ var f=function(n){
 while (i>0 || i===10) {
 	console.log(f(i));
 	i--;
-}//concole.log(x);
+}
+console.log(x);

@@ -1,0 +1,213 @@
+import math
+
+__author__ = 'Mikhail'
+import numpy as np
+from first.first import reverse
+
+
+def calculateU_(cb, A_reverse):
+	return -cb * A_reverse
+
+
+def calculateCx(c, D, x):
+	return c.transpose() + D * x.transpose()
+
+
+def calculateCb(cx, B):
+	cb = np.matrix(np.zeros(B[0].size))
+	for i in range(B[0].size):
+		cb[0, i] = cx[0, B[0, i]]
+	return cb
+
+
+def calculateAb(A, B):
+	Ab = np.matrix(np.zeros((A.shape[0], B.size)))
+	for i in range(B[0].size):
+		Ab[:, i] = A[:, B[0, i]]
+	return Ab
+
+
+def calculateDelta(U_, A, cx_):
+	return U_ * A + cx_
+
+
+def matrix_star(D, B_star):
+	D_star = np.matrix(np.eye(B_star[0].size))
+	for i in range(B_star[0].size):
+		for j in range(B_star[0].size):
+			D_star[i, j] = D[B_star[0, i], B_star[0, j]]
+	return D_star
+
+
+def calculate_Ab_star(A, B_star):
+	A_star = np.matrix(np.zeros((A[:, 0].size, B_star[0].size)))
+	for i in range(B_star[0].size):
+		A_star[:, i] = A[:, B_star[0, i]]
+	return A_star
+
+
+def calculateH(Ab_star, D_star):
+	H = np.matrix(np.zeros((D_star[0].size + Ab_star[:, 0].size, D_star[0].size + Ab_star[:, 0].size)))
+	H[0:D_star[0].size, 0:D_star[0].size] = D_star[:, :]
+	H[D_star[0].size:H[:, 0].size, 0:D_star[0].size] = Ab_star[:, :]
+	H[0:D_star[0].size, D_star[0].size:H[:, 0].size] = Ab_star.transpose()[:, :]
+	return H
+
+
+def calculate_b_star(B, D, A, J0):
+	b = np.matrix(np.zeros(B[0].size + A[:, 0].size))
+	for i in range(B[0].size):
+		b[0, i] = D[B[0, i], J0]
+	b[0, B[0].size:b[0].size] = A[:, J0].transpose()
+	return b
+
+
+def AddTo(B, J):
+	B_new = np.matrix(np.zeros(B[0].size + 1, dtype=np.int))
+	B_new[0, 0: B[0].size] = B[0, :]
+	B_new[0, -1] = J
+	return B_new
+
+
+def RemoveFrom(B, J):
+	B_new = np.matrix(np.zeros(B[0].size - 1, dtype=np.int))
+	j = 0
+	for i in range(B[0].size):
+		if B[0, i] != J:
+			B_new[0, j] = B[0, i]
+			j += 1
+	return B_new
+
+
+def swap(B, J_, J_plus):
+	index = B.tolist()[0].index(J_)
+	B[0, index] = J_plus.pop()
+	return B
+
+
+def chouce_event_replace(B, A, Ab, B_star, J0, J_):
+	if J0 == J_:
+		print('case 1')
+		B_new_star = AddTo(B_star, J_)
+		return [B, B_new_star]
+
+	if J_ in B_star and J_ not in B:
+		print('case 2')
+		B_new_star = RemoveFrom(B_star, J_)
+		return [B, B_new_star]
+
+	S = B[0].tolist()[0].index(J_)
+	set_difference = set(B_star[0].tolist()[0]) ^ set(B[0].tolist()[0])
+	J_plus = set(B_star[0].tolist()[0]) - set(B[0].tolist()[0])
+
+	if J_plus != set():
+		print('case 3')
+		Ab_reverse = np.linalg.inv(Ab)
+		for i in range(len(list(J_plus))):
+			if (Ab_reverse * A[:, i])[S] != 0:
+				B_new_star = RemoveFrom(B_star, J_)
+				B_new = swap(B, J_, J_plus)
+				return [B_new, B_new_star]
+
+	if set_difference == set():
+		print('case 4')
+		B_new_star = swap(B_star, J_, J0)
+		B_new = swap(B, J_, J0)
+		return [B_new, B_new_star]
+	Ab_reverse = np.linalg.inv(Ab)
+	for i in range(len(list(J_plus))):
+		if (Ab_reverse * A[:, i])[S] == 0:
+			print('case 4')
+			B_new_star = swap(B_star, J_, J0)
+			B_new = swap(B, J_, J0)
+			return [B_new, B_new_star]
+
+
+def upgrade_l(l, x_, B_star):
+	for i in range(B_star[0].size):
+		l[0, B_star[0, i]] = x_[0, i]
+
+
+def iterate(c, B, A, D, x, B_star):
+	cx_ = calculateCx(c, D, x).transpose()
+	cb = calculateCb(cx_, B)
+	Ab = calculateAb(A, B)
+	# A_reverse = reverse(Ab)
+	A_reverse = np.linalg.inv(Ab)
+	U_ = calculateU_(cb, A_reverse)
+	delta = calculateDelta(U_, A, cx_)
+
+	J0 = None
+	for i in range(delta[0].size):
+		if delta[0, i] < 0 and abs(delta[0, i]) > 0.00001:
+			J0 = i
+			break
+	if J0 is None:
+		return x
+
+	l = np.matrix(np.zeros(delta[0].size))
+	l[0, J0] = 1
+
+	D_star = matrix_star(D, B_star)
+	Ab_star = calculate_Ab_star(A, B_star)
+	H = calculateH(Ab_star, D_star)
+	b_star = calculate_b_star(B_star, D, A, J0)
+
+	x_ = -np.linalg.inv(H) * b_star.transpose()
+	# x_ = -reverse(H)*b_star.transpose()
+	x_ = x_.transpose()
+	upgrade_l(l, x_, B_star)
+
+	tetha0, tetha_J0 = float('infinity'), float('infinity')
+	J_ = None
+	for i in range(B_star[0].size):
+		if l[0, i] < 0:
+			tetha_i = -x[0, i] / l[0, i]
+			if tetha0 > tetha_i:
+				tetha0 = tetha_i
+				J_ = i
+	sigma = l * D * l.transpose()
+	if sigma != 0:
+		tetha_J0 = abs(delta[0, J0]) / sigma
+	if tetha0 > tetha_J0:
+		tetha0 = tetha_J0
+		J_ = J0
+	if J_ is None:
+		return "The objective function is not limited from above!"
+
+	new_x = np.matrix(x + tetha0 * l)
+	event = chouce_event_replace(B, A, Ab, B_star, J0, J_)
+
+	B_new = event[0]
+	B_new_star = event[1]
+
+	return iterate(c, B_new, A, D, new_x, B_new_star)
+
+
+# x = np.matrix([0, 0, 6, 4, 5, 0, 0, 0])
+# c = np.matrix([-10, -31, 7, 0, -21, -16, 11, -7])
+# B = np.matrix([2, 3, 4])
+# B_star = np.matrix([2, 3, 4])
+# A = np.matrix([[1, 2, 0, 1, 0, 4, -1, -3],
+#                [1, 3, 0, 0, 1, -1, -1, 2],
+#                [1, 4, 1, 0, 0, 2, -2, 0]])
+# x = np.matrix([1, 7./2, 1./2, 0])
+# c = np.matrix([-8, -6, -4, -6])
+# B = np.matrix([0, 1])
+# B_star = np.matrix([0, 1, 2])
+# A = np.matrix([[1, 0, 2, 1], [0, 1, -1, 2]])
+x = np.matrix([0, 0.5, 1])
+c = np.matrix([-1, 0, 0])
+B = np.matrix([1, 2])
+B_star = np.matrix([1, 2])
+A = np.matrix([[6, 6, 0], [3, 0, 1]])
+
+D = []
+with open('inputD') as f:
+	for l in f.readlines():
+		D.append(list(map(lambda x: int(x), l.replace('\n', '').split(' '))))
+
+D = np.matrix(D)
+
+np.set_printoptions(precision=5, suppress=True)
+print(iterate(c, B, A, D, x, B_star))

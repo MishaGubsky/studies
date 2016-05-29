@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #14243d !important;
+    background: radial-gradient(ellipse at center, #14243d 0%, #030611 100%) !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+body {
+    font: 14px/1.5 Arial, Helvetica, sans-serif !important;
+    color: #fff !important;
+    margin: 10px 0 0 0 !important;
+    background-color: inherit !important;
+}
+
+.form-control {
+    width: auto !important;
+    display: inline !important;
+}
+
+a,
+a:visited,
+a:hover {
+    color: #fff;
+    text-decoration: none;
+    cursor: auto;
+}
+
+a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.filestyle+div {
+    display: inline;
+}
+
+.content .folder {
+    background: url("../images/folder.png") left top no-repeat;
+    padding-left: 1.5em;
+    width:;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.content .file {
+    background: url("../images/file.png") left top no-repeat;
+    padding-left: 1.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#goBack {
+    background: url("../images/up.png") left top no-repeat;
+    padding-left: 1.5em;
+}
+
+.connectionForm {
+    text-align: center;
+}
+
+.div-content{
+    width: 90%;
+    height: 380px;
+    margin: 0 5% 0 5%;
+    padding: 0 10px;
+    overflow: auto;
+    border: 1px solid #c2c9f1;
+}
+
+#thead-size{
+    width: 100px;
+}
+
+
+
+#thead-date{
+    width: 140px;
+ }
+
+.error {
+    text-align: center;
+}
+
+.buttons {
+    margin: 10px;
+}
+
+.btn-default {
+    color: #fff !important;
+    background-color: #428bca !important;
+    border-color: #357ebd !important;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+    color: #fff;
+    background-color: #3276b1 !important;
+    border-color: #285e8e !important;
+}
+
+tr.selected {
+    background-color: #16396F;
+}
+
+
+.disabled{
+    opacity: .65;
+}
+
+th{
+    text-align: center;
+}
+table{
+    width: 100%;
+}

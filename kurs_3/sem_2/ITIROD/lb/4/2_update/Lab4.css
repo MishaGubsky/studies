@@ -1,0 +1,55 @@
+body {
+	margin: 0;
+	padding: 0;
+	align-items: center;
+	background-color: #AFEEEE;
+}
+
+h1, h3 {
+	text-align: center;
+}
+
+ul {
+	margin: 10px 0;
+	list-style-type: none; 
+}
+ul  a{
+	text-decoration: none;
+}
+
+#main-content {
+
+	/* width: 80%; */
+	display: table;
+	position: absolute;
+}
+
+#about-block {
+	margin: 2px; 
+	padding: 0 20%;
+}
+
+
+pre {
+	width: 30%;
+	margin: 0 auto;
+	color: #FF0000; 
+	font-weight: bold;
+}
+
+#themes-blockli{
+
+	
+}
+
+table th, table td {
+	border: 1px solid;
+}
+
+#shedule-table {
+	align-content: center;
+	width:50%; 
+	border: 1px solid; 
+	border-spacing: 0px;
+	background-color: #F0F0A0;
+}

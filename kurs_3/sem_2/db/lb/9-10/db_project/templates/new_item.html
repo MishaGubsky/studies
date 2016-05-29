@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h2 style="text-align: center">New Item</h2>
+    <div class="preview-box">
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <p><label for="name">Name</label>
+
+            <p><input type="text" name="name">
+
+            <p><label for="type">Type</label>
+
+            <p><input type="text" name="type">
+
+            <p><b>Notes</b></p>
+
+            <p><textarea name="notes"></textarea>
+
+            <p>
+                {% if log_error %}
+                    <label class="error">{{ log_error }}</label>
+                {% endif %}
+            </p>
+
+            <p></p>
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+    </div>
+{% endblock %}
